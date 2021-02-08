@@ -2,13 +2,13 @@
 
 ###       a project accelerate the CNN and deformable CNN in FPGA board(ex.pynq-z2)
 
-####阶段1
+#### 阶段1
 
 CNN算子加速，并实现ssd目标检测算法
 
 相关的工作已经有较好打基础，在此基础上进行学习借鉴。
 
-####阶段2
+#### 阶段2
 
 Deformable CNN算子加速，实现目标检测算法。
 
