@@ -1,6 +1,6 @@
 # Acc_DeCNN_on_FPGA
 
-a project accelerate the CNN and deformable CNN in FPGA board(ex.pynq-z2)
+###       a project accelerate the CNN and deformable CNN in FPGA board(ex.pynq-z2)
 
 阶段1
 CNN算子加速，并实现ssd目标检测算法
