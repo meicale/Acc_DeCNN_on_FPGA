@@ -26,7 +26,7 @@ refs.
 5. https://github.com/Memory-bread/SSD_IN_PYNQ
 
 refs：
-https://github.com/WalkerLau/Accelerating-CNN-with-FPGA
-https://github.com/doonny/PipeCNN
-https://github.com/dgschwend/zynqnet
-https://github.com/heheda365/ultra_net
+1. https://github.com/WalkerLau/Accelerating-CNN-with-FPGA
+2. https://github.com/doonny/PipeCNN
+3. https://github.com/dgschwend/zynqnet
+4. https://github.com/heheda365/ultra_net
