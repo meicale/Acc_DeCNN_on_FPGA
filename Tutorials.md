@@ -6,6 +6,8 @@ vitis hls
 https://github.com/Xilinx/Vitis-In-Depth-Tutorial/tree/master/Getting_Started/Vitis_HLS
 accelerated app.
 https://github.com/Xilinx/Vitis-In-Depth-Tutorial/blob/master/Hardware_Accelerators/Design_Tutorials/02-bloom/README.md
+  ref
+  https://zhuanlan.zhihu.com/p/43263751
 
 other:
 hls
