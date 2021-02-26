@@ -1,0 +1,1332 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xczu3eg-sbva484-1-i'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
+INFO: [HLS 200-1510] Running: create_clock -period 3 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 8.67 seconds. CPU system time: 0.51 seconds. Elapsed time: 8.93 seconds; current allocated memory: 191.449 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 191.601 MB.
+INFO: [HLS 200-10] Analyzing design file 'deform.cpp' ... 
+WARNING: [HLS 207-5498] the 'dim' option to 'Stream' pragma is not supported and will be ignored: deform.cpp:134:46
+WARNING: [HLS 207-5498] the 'dim' option to 'Stream' pragma is not supported and will be ignored: deform.cpp:136:45
+WARNING: [HLS 207-5498] the 'dim' option to 'Stream' pragma is not supported and will be ignored: deform.cpp:138:45
+WARNING: [HLS 207-5498] the 'dim' option to 'Stream' pragma is not supported and will be ignored: deform.cpp:140:51
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.78 seconds. CPU system time: 0.26 seconds. Elapsed time: 5.17 seconds; current allocated memory: 193.433 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::write(ap_uint<8> const&)' into 'void M2S_addr<ap_uint<8>, ap_uint<8> >(ap_uint<8>*, hls::stream<ap_uint<8>, 0>&, int, int, bool, bool)' (./dma.h:64:11)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::write(ap_int<128> const&)' into 'void M2S<16, 8, 8, ap_int<128>, ap_int<128> >(ap_int<128>*, hls::stream<ap_int<128>, 0>&, int)' (./dma.h:83:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::write(ap_int<256> const&)' into 'void M2S_repeat<16, 16, ap_int<16>, ap_int<256> >(ap_int<16>*, hls::stream<ap_int<256>, 0>&, int, int, bool)' (./dma.h:42:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 64u>, 0>::write(MultiChanData<16u, 64u> const&)' into 'void M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >(ap_int<64>*, hls::stream<MultiChanData<16u, 64u>, 0>&, int, int, bool)' (./dma.h:116:7)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::read(ap_int<128>&)' into 'hls::stream<ap_int<128>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 64u>, 0>::read(MultiChanData<16u, 64u>&)' into 'hls::stream<MultiChanData<16u, 64u>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::write(MultiChanData<16u, 24u> const&)' into 'hls::stream<MultiChanData<16u, 24u>, 0>::operator<<(MultiChanData<16u, 24u> const&)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:129:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::operator<<(MultiChanData<16u, 24u> const&)' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool)' (./conv.h:177:13)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 64u>, 0>::read()' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool)' (./conv.h:162:16)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::write(MultiChanData<16u, 24u> const&)' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool)' (./conv.h:149:14)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::read()' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool)' (./conv.h:143:38)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::read(MultiChanData<16u, 24u>&)' into 'hls::stream<MultiChanData<16u, 24u>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::read(ap_int<256>&)' into 'hls::stream<ap_int<256>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::write(ap_int<128> const&)' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool)' (./conv.h:308:8)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::read()' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool)' (./conv.h:287:38)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::read()' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool)' (./conv.h:286:41)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::write(ap_int<128> const&)' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool)' (./conv.h:283:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::read()' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool)' (./conv.h:275:40)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::stream()' into 'void conv1x1_pack<16, 16, 512, 1024, 512, 8, 24, 4, 16, 16>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(8) * (16)>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, ap_uint<16>, int, bool, bool)' (deform.cpp:21:42)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 64u>, 0>::stream()' into 'void conv1x1_pack<16, 16, 512, 1024, 512, 8, 24, 4, 16, 16>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(8) * (16)>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, ap_uint<16>, int, bool, bool)' (deform.cpp:23:42)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::stream()' into 'void conv1x1_pack<16, 16, 512, 1024, 512, 8, 24, 4, 16, 16>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(8) * (16)>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, ap_uint<16>, int, bool, bool)' (deform.cpp:25:32)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::stream()' into 'void conv1x1_pack<16, 16, 512, 1024, 512, 8, 24, 4, 16, 16>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(8) * (16)>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, ap_uint<16>, int, bool, bool)' (deform.cpp:27:32)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 64u>, 0>::write(MultiChanData<9u, 64u> const&)' into 'void M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >(ap_int<64>*, hls::stream<MultiChanData<9u, 64u>, 0>&, int, int, bool)' (./dma.h:137:8)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::read(ap_uint<8>&)' into 'hls::stream<ap_uint<8>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 128u>, 0>::write(MultiChanData<9u, 128u> const&)' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool)' (./conv.h:103:13)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::read()' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool)' (./conv.h:73:28)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 128u>, 0>::write(MultiChanData<9u, 128u> const&)' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool)' (./conv.h:64:14)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::read()' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool)' (./conv.h:61:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 64u>, 0>::read(MultiChanData<9u, 64u>&)' into 'hls::stream<MultiChanData<9u, 64u>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 128u>, 0>::read(MultiChanData<9u, 128u>&)' into 'hls::stream<MultiChanData<9u, 128u>, 0>::read()' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::operator<<(MultiChanData<16u, 24u> const&)' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool)' (./conv.h:243:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::operator<<(MultiChanData<16u, 24u> const&)' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool)' (./conv.h:236:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 128u>, 0>::read()' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool)' (./conv.h:222:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 64u>, 0>::read()' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool)' (./conv.h:220:19)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 128u>, 0>::stream()' into 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' (deform.cpp:72:47)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<9u, 64u>, 0>::stream()' into 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' (deform.cpp:74:42)
+INFO: [HLS 214-131] Inlining function 'hls::stream<MultiChanData<16u, 24u>, 0>::stream()' into 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' (deform.cpp:76:42)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::stream()' into 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' (deform.cpp:78:33)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<256>, 0>::stream()' into 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' (deform.cpp:80:34)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::read()' into 'void S2M<16, 8, 8, ap_int<128>, ap_int<128> >(hls::stream<ap_int<128>, 0>&, ap_int<128>*, int)' (./dma.h:93:22)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::stream()' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:133:29)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::stream()' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:135:29)
+INFO: [HLS 214-131] Inlining function 'void conv3x3_pack<16, 1024, 512, 8, 24, 4, 16, 16, 16384>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_uint<8>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, int, bool, bool, bool, bool)' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:166:2)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_int<128>, 0>::stream()' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:137:29)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::stream()' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:139:27)
+INFO: [HLS 214-131] Inlining function 'void conv1x1_pack<16, 16, 512, 1024, 512, 8, 24, 4, 16, 16>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<ap_int<(8) * (16)>, 0>&, ap_int<(4) * (16)>*, ap_int<16>*, ap_int<16>*, ap_uint<16>, ap_uint<16>, ap_uint<16>, int, bool, bool)' into 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:165:2)
+INFO: [HLS 214-131] Inlining function 'wrapper(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' into 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:221:2)
+INFO: [HLS 214-210] Disaggregating variable 'w_1'
+INFO: [HLS 214-210] Disaggregating variable 'sum'
+INFO: [HLS 214-210] Disaggregating variable 'out_temp'
+INFO: [HLS 214-210] Disaggregating variable 'w_vec'
+INFO: [HLS 214-210] Disaggregating variable 'input'
+INFO: [HLS 214-210] Disaggregating variable 'w_write'
+INFO: [HLS 214-210] Disaggregating variable 'win'
+INFO: [HLS 214-210] Disaggregating variable 'out_sum'
+INFO: [HLS 214-210] Disaggregating variable 'win'
+INFO: [HLS 214-210] Disaggregating variable 'w_vec'
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_78_5' (./conv.h:78:23) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' completely with a factor of 3 (./conv.h:78:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_224_5' (./conv.h:224:26) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 16 (./conv.h:224:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_227_6' (./conv.h:227:27) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:227:27)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_229_7' (./conv.h:229:20) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 3 (./conv.h:229:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_145_4' (./conv.h:145:23) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:145:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_165_7' (./conv.h:165:23) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:165:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_8' (./conv.h:167:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:167:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_178_9' (./conv.h:178:22) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:178:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_135_1' (./conv.h:135:20) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' completely with a factor of 16 (./conv.h:135:20)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+WARNING: [HLS 214-205] The INTERFACE pragma must have a max_widen_bitwidth setting that is both a power of 2 and in the range [0, 1024]. The current value of '0' will be ignored, in 'top(ap_int<128>*, ap_int<128>*, ap_int<64>*, ap_int<64>*, ap_int<16>*, ap_uint<8>*, int, int, int, int, bool, bool, bool, bool, bool, bool)' (deform.cpp:191:0)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 128 in loop 'VITIS_LOOP_76_1'(./dma.h:76:19) has been inferred on port 'gmem0' (./dma.h:76:19)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 16 in loop 'VITIS_LOOP_10_1'(./dma.h:10:19) has been inferred on port 'gmem4' (./dma.h:10:19)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 16 in loop 'VITIS_LOOP_14_2'(./dma.h:14:19) has been inferred on port 'gmem4' (./dma.h:14:19)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 16 in loop 'VITIS_LOOP_18_3'(./dma.h:18:19) has been inferred on port 'gmem4' (./dma.h:18:19)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 16 in loop 'VITIS_LOOP_23_4'(./dma.h:23:19) has been inferred on port 'gmem4' (./dma.h:23:19)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 128 in loop 'VITIS_LOOP_91_1'(./dma.h:91:19) has been inferred on port 'gmem1' (./dma.h:91:19)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i128.s_struct.ap_ints' into 'void M2S<16, 8, 8, ap_int<128>, ap_int<128> >(ap_int<128>*, hls::stream<ap_int<128>, 0>&, int) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i256.s_struct.ap_int.21s' into 'void M2S_repeat<16, 16, ap_int<16>, ap_int<256> >(ap_int<16>*, hls::stream<ap_int<256>, 0>&, int, int, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i1024.s_struct.MultiChanData.19s' into 'void M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >(ap_int<64>*, hls::stream<MultiChanData<16u, 64u>, 0>&, int, int, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i512.s_struct.MultiChanDatas' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i512.s_struct.MultiChanDatas' into 'void conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>(hls::stream<ap_int<(8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<16, (16) * (4)>, 0>&, int, ap_uint<16>, ap_uint<16>, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i128.s_struct.ap_ints' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i128.s_struct.ap_ints' into 'void quantize_mul_shift<24, 8, 16, 16, 16, 16>(hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<ap_int<(16) * (8)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, hls::stream<ap_int<(16) * (16)>, 0>&, int, ap_uint<16>, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i576.s_struct.MultiChanData.73s' into 'void M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >(ap_int<64>*, hls::stream<MultiChanData<9u, 64u>, 0>&, int, int, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i1152.s_struct.MultiChanData.71s' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i1152.s_struct.MultiChanData.71s' into 'void conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >(hls::stream<ap_int<128>, 0>&, hls::stream<ap_uint<8>, 0>&, hls::stream<MultiChanData<9u, 128u>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i512.s_struct.MultiChanDatas' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i512.s_struct.MultiChanDatas' into 'void dw_deform_M<512, 1024, 16, 24, 8, 4, 1>(hls::stream<MultiChanData<9u, (8) * (16)>, 0>&, hls::stream<MultiChanData<16, 24>, 0>&, hls::stream<MultiChanData<9u, (4) * (16)>, 0>&, ap_uint<16>, ap_uint<16>, int, bool, bool) (.1)' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i128.s_struct.ap_ints' into 'void S2M<16, 8, 8, ap_int<128>, ap_int<128> >(hls::stream<ap_int<128>, 0>&, ap_int<128>*, int) (.1)' (./dma.h:98:12)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 7.99 seconds. CPU system time: 0.27 seconds. Elapsed time: 8.44 seconds; current allocated memory: 200.895 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 200.896 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.68 seconds; current allocated memory: 224.328 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] /usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/ap_int_ref.h:414: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.03 seconds; current allocated memory: 257.100 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_88_1' (deform.cpp:89) in function 'top' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_273_2' (./conv.h:278) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_215_4' in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_85_6' (./conv.h:85) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_91_1' (./dma.h:94) in function 'S2M<16, 8, 8, ap_int<128>, ap_int<128> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_76_1' (./dma.h:79) in function 'M2S<16, 8, 8, ap_int<128>, ap_int<128> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_130_2' (./dma.h:130) in function 'M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_111_2' (./dma.h:111) in function 'M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_36_2' (./dma.h:38) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_280_3' (./conv.h:278) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_289_4' (./conv.h:278) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_239_8' in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_87_7' (./conv.h:87) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_88_8' in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_95_2' (./dma.h:94) in function 'S2M<16, 8, 8, ap_int<128>, ap_int<128> >' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_80_2' (./dma.h:79) in function 'M2S<16, 8, 8, ap_int<128>, ap_int<128> >' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_133_3' (./dma.h:133) in function 'M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >' completely with a factor of 9.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_113_3' (./dma.h:113) in function 'M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_39_3' (./dma.h:38) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >' completely with a factor of 16.
+INFO: [XFORM 203-101] Partitioning array 'scale_buffer3.V' (deform.cpp:143) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'bias_buffer3.V' (deform.cpp:144) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'scale_buffer1.V' (deform.cpp:145) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'bias_buffer1.V' (deform.cpp:146) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'k1_buffer.V' (deform.cpp:34) in dimension 1 with a cyclic factor 16.
+INFO: [XFORM 203-101] Partitioning array 'k3_buffer.V' (deform.cpp:84) in dimension 1 with a cyclic factor 9.
+INFO: [XFORM 203-101] Partitioning array 'input.data.V' (./conv.h:275) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'w_vec.data.V' (./conv.h:203) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.data.V' (./conv.h:204) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'out_sum.data.V' (./conv.h:205) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'offset_x.V' (./conv.h:34) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'offset_y.V' (./conv.h:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'line_buff.V' (./conv.h:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.data.V' (./conv.h:45) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'w_write.data.V' (./dma.h:126) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'w_1.data.V' (./dma.h:106) in dimension 1 completely.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_38_1_proc' (deform.cpp:40) to a process function for dataflow in function 'top'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_88_1_proc' (deform.cpp:89) to a process function for dataflow in function 'top'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'top' (deform.cpp:175)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'top' (deform.cpp:175), detected/extracted 24 process function(s): 
+	 'top.entry39'
+	 'Block_.split77_proc'
+	 'M2S_addr<ap_uint<8>, ap_uint<8> >'
+	 'Block_.split7793_proc'
+	 'M2S<16, 8, 8, ap_int<128>, ap_int<128> >'
+	 'PackReadBuffer<ap_int<16> >'
+	 'Block_.split7796_proc'
+	 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >21'
+	 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >22'
+	 'Loop_VITIS_LOOP_38_1_proc'
+	 'Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc'
+	 'M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >'
+	 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>'
+	 'quantize_mul_shift<24, 8, 16, 16, 16, 16>23'
+	 'Loop_VITIS_LOOP_88_1_proc'
+	 'Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc'
+	 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >24'
+	 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >'
+	 'M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >'
+	 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >'
+	 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>'
+	 'quantize_mul_shift<24, 8, 16, 16, 16, 16>'
+	 'Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit89_proc'
+	 'S2M<16, 8, 8, ap_int<128>, ap_int<128> >'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:0) to (./conv.h:309:3) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>23'... converting 33 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:0) to (./conv.h:309:3) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>'... converting 33 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./conv.h:85:40) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >'... converting 19 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./conv.h:53:38) to (./conv.h:58:9) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' (deform.cpp:66:10)...64 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' (./conv.h:28:6)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' (deform.cpp:17:10)...256 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit89_proc' (deform.cpp:66:10)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'Block_.split7793_proc' (deform.cpp:160:52)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 13.36 seconds. CPU system time: 0.09 seconds. Elapsed time: 13.61 seconds; current allocated memory: 316.344 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_272_1' (./conv.h:278:21) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>23'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_272_1' (./conv.h:278:21) in function 'quantize_mul_shift<24, 8, 16, 16, 16, 16>'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_212_3' (./conv.h:212:39) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_211_2' (./conv.h:211:38) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_210_1' (./conv.h:210:29) in function 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_53_3' (./conv.h:53:38) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_51_2' (./conv.h:51:37) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_47_1' (./conv.h:47:28) in function 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_157_5' (./conv.h:157:38) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_140_2' (./conv.h:140:29) in function 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_129_1' (./dma.h:129:29) in function 'M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_110_1' (./dma.h:110:29) in function 'M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (./dma.h:38:8) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >24'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (./dma.h:38:8) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >22'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (./dma.h:38:8) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >21'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (./dma.h:38:8) in function 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_60_1' (./dma.h:60:28) in function 'M2S_addr<ap_uint<8>, ap_uint<8> >'.
+INFO: [HLS 200-444] Inferring multiple bus burst read of variable length on port 'gmem3' (deform.cpp:89:16). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of variable length on port 'gmem2' (deform.cpp:40:15). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-472] Inferring partial write operation for 'line_buff.V[0]' (./conv.h:67:47)
+INFO: [HLS 200-472] Inferring partial write operation for 'in_value.V' (./conv.h:153:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'scale1' (./dma.h:12:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'bias1' (./dma.h:16:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'scale3' (./dma.h:20:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'bias3' (./dma.h:25:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'k3_buffer.V[0]' (deform.cpp:89:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'k1_buffer.V[0]' (deform.cpp:40:15)
+WARNING: [HLS 200-1449] Process M2S_addr<ap_uint<8>, ap_uint<8> > has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process M2S<16, 8, 8, ap_int<128>, ap_int<128> > has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process PackReadBuffer<ap_int<16> > has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process Loop_VITIS_LOOP_38_1_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process Loop_VITIS_LOOP_88_1_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 10.26 seconds. CPU system time: 0.05 seconds. Elapsed time: 10.34 seconds; current allocated memory: 586.031 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'top' ...
+WARNING: [SYN 201-103] Legalizing function name 'top.entry39' to 'top_entry39'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_.split77_proc' to 'Block_split77_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_addr<ap_uint<8>, ap_uint<8> >' to 'M2S_addr_ap_uint_8_ap_uint_8_s'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_.split7793_proc' to 'Block_split7793_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S<16, 8, 8, ap_int<128>, ap_int<128> >' to 'M2S_16_8_8_ap_int_128_ap_int_128_s'.
+WARNING: [SYN 201-103] Legalizing function name 'PackReadBuffer<ap_int<16> >' to 'PackReadBuffer_ap_int_16_s'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_.split7796_proc' to 'Block_split7796_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >21' to 'M2S_repeat_16_16_ap_int_16_ap_int_256_21'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >22' to 'M2S_repeat_16_16_ap_int_16_ap_int_256_22'.
+WARNING: [SYN 201-103] Legalizing function name 'Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc' to 'Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat_merge_1x1_v2<4, 16, 16, ap_int<64>, MultiChanData<16u, 64u> >' to 'M2S_repeat_merge_1x1_v2_4_16_16_ap_int_64_MultiChanData_16u_64u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'conv1x1_v4<512, 512, 1024, 16, 16, 24, 8, 4>' to 'conv1x1_v4_512_512_1024_16_16_24_8_4_s'.
+WARNING: [SYN 201-103] Legalizing function name 'quantize_mul_shift<24, 8, 16, 16, 16, 16>23' to 'quantize_mul_shift_24_8_16_16_16_16_23'.
+WARNING: [SYN 201-103] Legalizing function name 'Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc' to 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >24' to 'M2S_repeat_16_16_ap_int_16_ap_int_256_24'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat<16, 16, ap_int<16>, ap_int<256> >' to 'M2S_repeat_16_16_ap_int_16_ap_int_256_s'.
+WARNING: [SYN 201-103] Legalizing function name 'M2S_repeat_merge_3x3<4, 1, 16, ap_int<64>, MultiChanData<9u, 64u> >' to 'M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'conv_3x3_linebuffer<512, 1024, 1024, 16, 8, 1024, ap_int<128>, MultiChanData<9u, 128u> >' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dw_deform_M<512, 1024, 16, 24, 8, 4, 1>' to 'dw_deform_M_512_1024_16_24_8_4_1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'quantize_mul_shift<24, 8, 16, 16, 16, 16>' to 'quantize_mul_shift_24_8_16_16_16_16_s'.
+WARNING: [SYN 201-103] Legalizing function name 'Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit89_proc' to 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit89_proc'.
+WARNING: [SYN 201-103] Legalizing function name 'S2M<16, 8, 8, ap_int<128>, ap_int<128> >' to 'S2M_16_8_8_ap_int_128_ap_int_128_s'.
+WARNING: [SYN 201-107] Renaming port name 'top/out' to 'top/out_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top_entry39' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 588.845 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 589.321 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_split77_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 589.373 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 589.471 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_addr_ap_uint_8_ap_uint_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_60_1_VITIS_LOOP_61_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_addr_ap_uint_8_ap_uint_8_s' (loop 'VITIS_LOOP_60_1_VITIS_LOOP_61_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln61', ./dma.h:61->deform.cpp:157) and 'icmp' operation ('icmp_ln61', ./dma.h:61->deform.cpp:157).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 11, loop 'VITIS_LOOP_60_1_VITIS_LOOP_61_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 589.643 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 589.933 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_split7793_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 590.025 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 590.187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_16_8_8_ap_int_128_ap_int_128_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_76_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_76_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 590.307 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 590.498 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'PackReadBuffer_ap_int_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_10_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_10_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_14_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_14_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_18_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_18_3'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_23_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_23_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 591.257 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 592.439 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_split7796_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_V_1_out_dc_0) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 592.604 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 592.948 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_16_16_ap_int_16_ap_int_256_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_16_16_ap_int_16_ap_int_256_21' (loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln36', ./dma.h:36->deform.cpp:31) and 'icmp' operation ('icmp_ln36', ./dma.h:36->deform.cpp:31).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 593.261 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 593.814 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_16_16_ap_int_16_ap_int_256_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_16_16_ap_int_16_ap_int_256_22' (loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln36', ./dma.h:36->deform.cpp:32) and 'icmp' operation ('icmp_ln36', ./dma.h:36->deform.cpp:32).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 594.127 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 594.680 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_38_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_38_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_38_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 594.992 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 595.461 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 595.499 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 595.553 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_merge_1x1_v2_4_16_16_ap_int_64_MultiChanData_16u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_110_1_VITIS_LOOP_111_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_merge_1x1_v2_4_16_16_ap_int_64_MultiChanData_16u_64u_s' (loop 'VITIS_LOOP_110_1_VITIS_LOOP_111_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln111', ./dma.h:111->deform.cpp:44) and 'icmp' operation ('icmp_ln111', ./dma.h:111->deform.cpp:44).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_110_1_VITIS_LOOP_111_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 595.898 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 596.560 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv1x1_v4_512_512_1024_16_16_24_8_4_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_414) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_412) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_410) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_408) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_406) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_404) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_402) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_400) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_398) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_396) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_394) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_392) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_390) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_388) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_386) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_384) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_382) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_380) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_378) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_376) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_374) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_372) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_370) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_368) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_366) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_364) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_362) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_360) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_358) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_356) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_354) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_352) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_350) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_348) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_346) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_344) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_342) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_340) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_338) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_336) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_334) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_332) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_330) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_328) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_326) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_324) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_322) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_320) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_318) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_316) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_314) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_312) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_310) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_308) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_306) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_304) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_302) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_300) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_298) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_296) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_294) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_292) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_290) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_288) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_286) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_284) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_282) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_280) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_278) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_276) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_274) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_272) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_270) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_268) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_266) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_264) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_262) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_260) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_258) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_256) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_254) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_252) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_250) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_248) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_246) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_244) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_242) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_240) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_238) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_236) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_234) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_232) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_230) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_228) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_226) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_224) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_222) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_220) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_218) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_216) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_214) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_212) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_210) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_208) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_206) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_204) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_202) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_200) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_198) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_196) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_194) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_192) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_190) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_188) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_186) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_184) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_182) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_180) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_178) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_176) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_174) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_172) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_170) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_168) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_166) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_164) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_162) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_160) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_141_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_141_3'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_159_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'VITIS_LOOP_159_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.58 seconds. CPU system time: 0.16 seconds. Elapsed time: 1.77 seconds; current allocated memory: 601.807 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.15 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.27 seconds; current allocated memory: 608.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'quantize_mul_shift_24_8_16_16_16_16_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_272_1_VITIS_LOOP_273_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'VITIS_LOOP_272_1_VITIS_LOOP_273_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.53 seconds. CPU system time: 0.13 seconds. Elapsed time: 1.66 seconds; current allocated memory: 610.559 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 612.790 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_88_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_88_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_88_1'
+WARNING: [HLS 200-871] Estimated clock period (2.302ns) exceeds the target (target clock period: 3ns, clock uncertainty: 0.81ns, effective delay budget: 2.19ns).
+WARNING: [HLS 200-1016] The critical path in module 'Loop_VITIS_LOOP_88_1_proc' consists of the following:	'select' operation ('select_ln88', deform.cpp:88) [85]  (0.42 ns)
+	'phi' operation ('phi_urem', deform.cpp:88) with incoming values : ('select_ln88', deform.cpp:88) [33]  (0 ns)
+	'add' operation ('add_ln88_2', deform.cpp:88) [83]  (1.02 ns)
+	'icmp' operation ('icmp_ln88_1', deform.cpp:88) [84]  (0.866 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.6 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.64 seconds; current allocated memory: 613.056 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 613.443 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln93) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 613.532 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 613.700 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_16_16_ap_int_16_ap_int_256_24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_16_16_ap_int_16_ap_int_256_24' (loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln36', ./dma.h:36->deform.cpp:93) and 'icmp' operation ('icmp_ln36', ./dma.h:36->deform.cpp:93).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 614.012 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 614.564 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_16_16_ap_int_16_ap_int_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_16_16_ap_int_16_ap_int_256_s' (loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln36', ./dma.h:36->deform.cpp:94) and 'icmp' operation ('icmp_ln36', ./dma.h:36->deform.cpp:94).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 614.878 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 615.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln134) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_129_1_VITIS_LOOP_130_2'.
+WARNING: [HLS 200-880] The II Violation in module 'M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_s' (loop 'VITIS_LOOP_129_1_VITIS_LOOP_130_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln130', ./dma.h:130->deform.cpp:97) and 'icmp' operation ('icmp_ln130', ./dma.h:130->deform.cpp:97).
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('k3_buffer_V_4_load_4', ./dma.h:134->deform.cpp:97) on array 'k3_buffer_V_4' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'k3_buffer_V_4'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('k3_buffer_V_6_load_6', ./dma.h:134->deform.cpp:97) on array 'k3_buffer_V_6' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'k3_buffer_V_6'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('k3_buffer_V_8_load_8', ./dma.h:134->deform.cpp:97) on array 'k3_buffer_V_8' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'k3_buffer_V_8'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 23, loop 'VITIS_LOOP_129_1_VITIS_LOOP_130_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.43 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.44 seconds; current allocated memory: 616.381 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 617.750 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=add_ln47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_14'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_13'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_12'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_11'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_10'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_9'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_8'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_7'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_6'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_5'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_4'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_3'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_2'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_1'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'line_buff_V_0'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_59_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_59_4'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_85_6'
+WARNING: [HLS 200-871] Estimated clock period (3ns) exceeds the target (target clock period: 3ns, clock uncertainty: 0.81ns, effective delay budget: 2.19ns).
+WARNING: [HLS 200-1016] The critical path in module 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s' consists of the following:	'add' operation of DSP[74] ('add_ln47', ./conv.h:47->deform.cpp:100) [71]  (1.91 ns)
+	'mul' operation of DSP[74] ('bound', ./conv.h:47->deform.cpp:100) [74]  (1.09 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.61 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.63 seconds; current allocated memory: 619.441 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.68 seconds. CPU system time: 0 seconds. Elapsed time: 0.68 seconds; current allocated memory: 621.810 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dw_deform_M_512_1024_16_24_8_4_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=bound) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_143) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_139) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_141) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_138) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_136) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_137) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_134) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_130) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_132) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_129) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_127) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_128) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_125) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_121) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_123) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_120) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_118) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_119) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_116) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_112) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_114) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_111) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_109) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_110) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_107) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_103) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_105) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_102) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_100) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_101) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_98) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_94) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_96) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_93) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_91) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_92) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_89) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_85) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_87) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_84) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_82) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_80) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_78) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_75) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_74) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_62) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_58) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_57) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=ret_2) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_215_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 10, loop 'VITIS_LOOP_215_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.76 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.88 seconds; current allocated memory: 625.650 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.92 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.99 seconds; current allocated memory: 631.177 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'quantize_mul_shift_24_8_16_16_16_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1345) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_272_1_VITIS_LOOP_273_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'VITIS_LOOP_272_1_VITIS_LOOP_273_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.05 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.16 seconds; current allocated memory: 632.748 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 634.968 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit89_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.58 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.6 seconds; current allocated memory: 635.074 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 635.249 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'S2M_16_8_8_ap_int_128_ap_int_128_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_91_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_91_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 635.369 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 635.563 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO offset_s (from M2S_addr_ap_uint_8_ap_uint_8_U0 to conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_U0) to 5 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO fin (from M2S_16_8_8_ap_int_128_ap_int_128_U0 to conv1x1_v4_512_512_1024_16_16_24_8_4_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_0 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_1 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_2 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_3 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_4 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_5 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_6 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO scale_buffer3_V_7 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_0 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_1 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_2 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_3 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_4 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_5 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_6 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1019] Consider increasing the depth of PIPO bias_buffer3_V_7 (from PackReadBuffer_ap_int_16_U0 to M2S_repeat_16_16_ap_int_16_ap_int_256_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO s_scale (from M2S_repeat_16_16_ap_int_16_ap_int_256_21_U0 to quantize_mul_shift_24_8_16_16_16_16_23_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO s_bias (from M2S_repeat_16_16_ap_int_16_ap_int_256_22_U0 to quantize_mul_shift_24_8_16_16_16_16_23_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO s_scale_1 (from M2S_repeat_16_16_ap_int_16_ap_int_256_24_U0 to quantize_mul_shift_24_8_16_16_16_16_U0) to 6 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO s_bias_1 (from M2S_repeat_16_16_ap_int_16_ap_int_256_U0 to quantize_mul_shift_24_8_16_16_16_16_U0) to 6 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO k3s (from M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_U0 to dw_deform_M_512_1024_16_24_8_4_1_U0) to 5 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 636.393 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 4.06 seconds. CPU system time: 0 seconds. Elapsed time: 4.06 seconds; current allocated memory: 638.712 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top_entry39' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top_entry39'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.14 seconds. CPU system time: 0 seconds. Elapsed time: 2.21 seconds; current allocated memory: 639.256 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_split77_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_split77_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 640.464 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_addr_ap_uint_8_ap_uint_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_addr_ap_uint_8_ap_uint_8_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 641.369 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_split7793_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_split7793_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 642.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_16_8_8_ap_int_128_ap_int_128_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_16_8_8_ap_int_128_ap_int_128_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 643.291 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'PackReadBuffer_ap_int_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'PackReadBuffer_ap_int_16_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 645.362 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_split7796_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_32_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_split7796_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 649.235 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_16_16_ap_int_16_ap_int_256_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_864_16_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_16_16_ap_int_16_ap_int_256_21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 651.258 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_16_16_ap_int_16_ap_int_256_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_864_16_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_16_16_ap_int_16_ap_int_256_22'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 654.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_38_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_38_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 656.335 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 657.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_merge_1x1_v2_4_16_16_ap_int_64_MultiChanData_16u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_24ns_56_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_1664_64_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_merge_1x1_v2_4_16_16_ap_int_64_MultiChanData_16u_64u_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 659.624 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv1x1_v4_512_512_1024_16_16_24_8_4_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4s_12s_13_4_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4s_12_1_1': 128 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv1x1_v4_512_512_1024_16_16_24_8_4_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.69 seconds. CPU system time: 0 seconds. Elapsed time: 0.68 seconds; current allocated memory: 674.242 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'quantize_mul_shift_24_8_16_16_16_16_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_24s_16s_17ns_40_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'quantize_mul_shift_24_8_16_16_16_16_23'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.6 seconds. CPU system time: 0.14 seconds. Elapsed time: 2.8 seconds; current allocated memory: 702.377 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_88_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_88_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.39 seconds; current allocated memory: 710.484 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 711.983 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_16_16_ap_int_16_ap_int_256_24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_864_16_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_16_16_ap_int_16_ap_int_256_24'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 713.634 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_16_16_ap_int_16_ap_int_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_864_16_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_16_16_ap_int_16_ap_int_256_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 716.468 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_18ns_33_4_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_964_64_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_16ns_5ns_16_20_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'M2S_repeat_merge_3x3_4_1_16_ap_int_64_MultiChanData_9u_64u_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 720.062 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_0' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_bkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_1' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_2' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_3' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_4' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_5' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_6' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_7' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_ibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_8' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_jbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_9' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_kbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_10' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_lbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_11' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_mb6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_12' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_ncg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_13' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_ocq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s_line_buff_V_14' to 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_pcA' due to the length limit 80
+INFO: [RTGEN 206-100] Generating core module 'am_addmul_16ns_5ns_16ns_33_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_33ns_65_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_154_128_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_17ns_3ns_2_21_seq_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_32s_5ns_4_36_seq_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.59 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.61 seconds; current allocated memory: 728.782 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dw_deform_M_512_1024_16_24_8_4_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4s_12s_13_4_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4s_13s_13_4_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4s_13s_14_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4s_12_1_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dw_deform_M_512_1024_16_24_8_4_1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.8 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.82 seconds; current allocated memory: 745.471 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'quantize_mul_shift_24_8_16_16_16_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_24s_16s_17ns_40_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_12ns_44_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'quantize_mul_shift_24_8_16_16_16_16_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.48 seconds. CPU system time: 0.12 seconds. Elapsed time: 1.61 seconds; current allocated memory: 767.440 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit89_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit89_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.41 seconds; current allocated memory: 775.239 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'S2M_16_8_8_ap_int_128_ap_int_128_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'S2M_16_8_8_ap_int_128_ap_int_128_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 776.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem3' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem4' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem5' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/fmap' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/k0_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/k0_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/quant' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/offsets' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/D' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/IC' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/OC' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/batch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/STRIDE_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/skip3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/skip1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/deform' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/relu1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/relu3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'fmap', 'out_r', 'k0_1', 'k0_3', 'quant', 'offsets', 'D', 'IC', 'OC', 'batch', 'STRIDE_2', 'skip3', 'skip1', 'deform', 'relu1', 'relu3' and 'return' to AXI-Lite port control.
+INFO: [SYN 201-210] Renamed object name 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc_U0' to 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIqcK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'start_for_conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_U0' to 'start_for_conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanDatrcU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit89_proc_U0' to 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIsc4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'start_for_Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc_U0' to 'start_for_Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi1tde' due to the length limit 80
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.14 seconds; current allocated memory: 791.049 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_32s_32s_32_5_1_Multiplier_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_32ns_32ns_64_5_1_Multiplier_1'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_32ns_12ns_44_5_1_Multiplier_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_32ns_24ns_56_5_1_Multiplier_3'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_8s_4s_12_1_1_Multiplier_4'
+INFO: [RTMG 210-278] Implementing memory 'top_conv1x1_v4_512_512_1024_16_16_24_8_4_s_in_value_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_16ns_5ns_16_20_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_32ns_33ns_65_5_1_Multiplier_5'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_32s_5ns_4_36_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_srem_17ns_3ns_2_21_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'top_mul_10s_10s_10_1_1_Mul_LUT_0'
+INFO: [RTMG 210-278] Implementing memory 'top_conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanData_9u_128u_bkb_ram (RAM_1WnR)' using auto RAMs.
+INFO: [HLS 200-741] Implementing PIPO top_k1_buffer_V_0_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'top_k1_buffer_V_0_memcore_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-740] Implementing PIPO top_k3_buffer_V_0_memcore using a separate memory for each block
+INFO: [RTMG 210-278] Implementing memory 'top_k3_buffer_V_0_memcore_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-740] Implementing PIPO top_scale_buffer3_V_0_memcore using a separate memory for each block
+INFO: [RTMG 210-278] Implementing memory 'top_scale_buffer3_V_0_memcore_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fmap_c_U(top_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'out_c_U(top_fifo_w64_d10_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'k0_1_c_U(top_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'k0_3_c_U(top_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'quant_c_U(top_fifo_w64_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'offsets_c_U(top_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_c123_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_c124_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'IC_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'IC_c125_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_c126_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_c127_U(top_fifo_w32_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c_U(top_fifo_w32_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c128_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c129_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c130_U(top_fifo_w32_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'STRIDE_2_c_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'STRIDE_2_c131_U(top_fifo_w1_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'STRIDE_2_c132_U(top_fifo_w1_d7_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c_U(top_fifo_w1_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c133_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c134_U(top_fifo_w1_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c135_U(top_fifo_w1_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c136_U(top_fifo_w1_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c137_U(top_fifo_w1_d7_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c138_U(top_fifo_w1_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'deform_c_U(top_fifo_w1_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'deform_c139_U(top_fifo_w1_d7_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'relu1_c_U(top_fifo_w1_d6_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'relu3_c_U(top_fifo_w1_d9_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'CONV_D_loc_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'CONV_D_loc_c140_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'offset_s_U(top_fifo_w8_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'select_ln160_loc_channel_U(top_fifo_w29_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fin_U(top_fifo_w128_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c141_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c142_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c143_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c144_U(top_fifo_w32_d6_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_V_loc_c_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_V_loc_c145_U(top_fifo_w16_d6_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'IC_V_loc_c_U(top_fifo_w16_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c_U(top_fifo_w16_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c146_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_1_loc_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_1_loc_c147_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln31_1_loc_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln31_1_loc_c148_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln31_1_loc_c149_U(top_fifo_w32_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_cast_loc_c_U(top_fifo_w12_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_cast_loc_c150_U(top_fifo_w12_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_cast_loc_c151_U(top_fifo_w12_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_cast_loc_c152_U(top_fifo_w12_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ret_V_cast_loc_c153_U(top_fifo_w12_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_scale_U(top_fifo_w256_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_bias_U(top_fifo_w256_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'lshr_ln44_cast_loc_channel_U(top_fifo_w24_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'k1_U(top_fifo_w1024_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln31_1_loc_c154_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c155_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_conv1_U(top_fifo_w512_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln31_1_loc_c156_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c157_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip1_c158_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'f1_U(top_fifo_w128_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c159_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln93_1_loc_c_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln93_1_loc_c160_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln93_1_loc_c161_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_ln93_1_loc_c162_U(top_fifo_w32_d7_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_scale_1_U(top_fifo_w256_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_bias_1_U(top_fifo_w256_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'k3s_U(top_fifo_w576_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_layer_U(top_fifo_w1152_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'D_V_loc_c163_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c164_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'batch_c165_U(top_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'STRIDE_2_c166_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c167_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's_conv3_U(top_fifo_w512_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'OC_V_loc_c168_U(top_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'skip3_c169_U(top_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'f3_U(top_fifo_w128_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'select_ln169_loc_c_U(top_fifo_w29_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_split77_proc_U0_U(top_start_for_Block_split77_proc_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_split7793_proc_U0_U(top_start_for_Block_split7793_proc_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_split7796_proc_U0_U(top_start_for_Block_split7796_proc_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_quantize_mul_shift_24_8_16_16_16_16_23_U0_U(top_start_for_quantize_mul_shift_24_8_16_16_16_16_23_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIqcK_U(top_start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIqcK)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanDatrcU_U(top_start_for_conv_3x3_linebuffer_512_1024_1024_16_8_1024_ap_int_128_MultiChanDatrcU)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_quantize_mul_shift_24_8_16_16_16_16_U0_U(top_start_for_quantize_mul_shift_24_8_16_16_16_16_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIsc4_U(top_start_for_Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintIsc4)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_S2M_16_8_8_ap_int_128_ap_int_128_U0_U(top_start_for_S2M_16_8_8_ap_int_128_ap_int_128_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_conv1x1_v4_512_512_1024_16_16_24_8_4_U0_U(top_start_for_conv1x1_v4_512_512_1024_16_16_24_8_4_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi1tde_U(top_start_for_Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi1tde)' using Shift Registers.

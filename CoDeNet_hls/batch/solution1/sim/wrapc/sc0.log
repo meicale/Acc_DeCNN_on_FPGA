@@ -1,0 +1,7 @@
+   Build using "/usr/vitis/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_top_util.cpp
+   Compiling deform.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top.cpp
+   Compiling tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top_ir.ll
+   Generating cosim.tv.exe

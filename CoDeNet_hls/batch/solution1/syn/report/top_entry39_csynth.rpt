@@ -1,0 +1,277 @@
+
+
+================================================================
+== Vitis HLS Report for 'top_entry39'
+================================================================
+* Date:           Wed Feb 24 15:50:07 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  1.095 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    315|    -|
+|Register         |        -|    -|       3|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       3|    317|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |D_out1_blk_n          |   9|          2|    1|          2|
+    |D_out2_blk_n          |   9|          2|    1|          2|
+    |D_out_blk_n           |   9|          2|    1|          2|
+    |IC_out3_blk_n         |   9|          2|    1|          2|
+    |IC_out_blk_n          |   9|          2|    1|          2|
+    |OC_out4_blk_n         |   9|          2|    1|          2|
+    |OC_out5_blk_n         |   9|          2|    1|          2|
+    |OC_out_blk_n          |   9|          2|    1|          2|
+    |STRIDE_2_out10_blk_n  |   9|          2|    1|          2|
+    |STRIDE_2_out9_blk_n   |   9|          2|    1|          2|
+    |STRIDE_2_out_blk_n    |   9|          2|    1|          2|
+    |ap_done               |   9|          2|    1|          2|
+    |batch_out6_blk_n      |   9|          2|    1|          2|
+    |batch_out7_blk_n      |   9|          2|    1|          2|
+    |batch_out8_blk_n      |   9|          2|    1|          2|
+    |batch_out_blk_n       |   9|          2|    1|          2|
+    |deform_out17_blk_n    |   9|          2|    1|          2|
+    |deform_out_blk_n      |   9|          2|    1|          2|
+    |fmap_out_blk_n        |   9|          2|    1|          2|
+    |k0_1_out_blk_n        |   9|          2|    1|          2|
+    |k0_3_out_blk_n        |   9|          2|    1|          2|
+    |offsets_out_blk_n     |   9|          2|    1|          2|
+    |out_out_blk_n         |   9|          2|    1|          2|
+    |quant_out_blk_n       |   9|          2|    1|          2|
+    |real_start            |   9|          2|    1|          2|
+    |relu1_out_blk_n       |   9|          2|    1|          2|
+    |relu3_out_blk_n       |   9|          2|    1|          2|
+    |skip1_out16_blk_n     |   9|          2|    1|          2|
+    |skip1_out_blk_n       |   9|          2|    1|          2|
+    |skip3_out11_blk_n     |   9|          2|    1|          2|
+    |skip3_out12_blk_n     |   9|          2|    1|          2|
+    |skip3_out13_blk_n     |   9|          2|    1|          2|
+    |skip3_out14_blk_n     |   9|          2|    1|          2|
+    |skip3_out15_blk_n     |   9|          2|    1|          2|
+    |skip3_out_blk_n       |   9|          2|    1|          2|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 | 315|         70|   35|         70|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-----------------------+-----+-----+------------+----------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|start_full_n           |   in|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_continue            |   in|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|start_out              |  out|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|start_write            |  out|    1|  ap_ctrl_hs|     top.entry39|  return value|
+|fmap                   |   in|   64|     ap_none|            fmap|        scalar|
+|out_r                  |   in|   64|     ap_none|           out_r|        scalar|
+|k0_1                   |   in|   64|     ap_none|            k0_1|        scalar|
+|k0_3                   |   in|   64|     ap_none|            k0_3|        scalar|
+|quant                  |   in|   64|     ap_none|           quant|        scalar|
+|offsets                |   in|   64|     ap_none|         offsets|        scalar|
+|D                      |   in|   32|     ap_none|               D|        scalar|
+|IC                     |   in|   32|     ap_none|              IC|        scalar|
+|OC                     |   in|   32|     ap_none|              OC|        scalar|
+|batch                  |   in|   32|     ap_none|           batch|        scalar|
+|STRIDE_2               |   in|    1|     ap_none|        STRIDE_2|        scalar|
+|skip3                  |   in|    1|     ap_none|           skip3|        scalar|
+|skip1                  |   in|    1|     ap_none|           skip1|        scalar|
+|deform                 |   in|    1|     ap_none|          deform|        scalar|
+|relu1                  |   in|    1|     ap_none|           relu1|        scalar|
+|relu3                  |   in|    1|     ap_none|           relu3|        scalar|
+|fmap_out_din           |  out|   64|     ap_fifo|        fmap_out|       pointer|
+|fmap_out_full_n        |   in|    1|     ap_fifo|        fmap_out|       pointer|
+|fmap_out_write         |  out|    1|     ap_fifo|        fmap_out|       pointer|
+|out_out_din            |  out|   64|     ap_fifo|         out_out|       pointer|
+|out_out_full_n         |   in|    1|     ap_fifo|         out_out|       pointer|
+|out_out_write          |  out|    1|     ap_fifo|         out_out|       pointer|
+|k0_1_out_din           |  out|   64|     ap_fifo|        k0_1_out|       pointer|
+|k0_1_out_full_n        |   in|    1|     ap_fifo|        k0_1_out|       pointer|
+|k0_1_out_write         |  out|    1|     ap_fifo|        k0_1_out|       pointer|
+|k0_3_out_din           |  out|   64|     ap_fifo|        k0_3_out|       pointer|
+|k0_3_out_full_n        |   in|    1|     ap_fifo|        k0_3_out|       pointer|
+|k0_3_out_write         |  out|    1|     ap_fifo|        k0_3_out|       pointer|
+|quant_out_din          |  out|   64|     ap_fifo|       quant_out|       pointer|
+|quant_out_full_n       |   in|    1|     ap_fifo|       quant_out|       pointer|
+|quant_out_write        |  out|    1|     ap_fifo|       quant_out|       pointer|
+|offsets_out_din        |  out|   64|     ap_fifo|     offsets_out|       pointer|
+|offsets_out_full_n     |   in|    1|     ap_fifo|     offsets_out|       pointer|
+|offsets_out_write      |  out|    1|     ap_fifo|     offsets_out|       pointer|
+|D_out_din              |  out|   32|     ap_fifo|           D_out|       pointer|
+|D_out_full_n           |   in|    1|     ap_fifo|           D_out|       pointer|
+|D_out_write            |  out|    1|     ap_fifo|           D_out|       pointer|
+|D_out1_din             |  out|   32|     ap_fifo|          D_out1|       pointer|
+|D_out1_full_n          |   in|    1|     ap_fifo|          D_out1|       pointer|
+|D_out1_write           |  out|    1|     ap_fifo|          D_out1|       pointer|
+|D_out2_din             |  out|   32|     ap_fifo|          D_out2|       pointer|
+|D_out2_full_n          |   in|    1|     ap_fifo|          D_out2|       pointer|
+|D_out2_write           |  out|    1|     ap_fifo|          D_out2|       pointer|
+|IC_out_din             |  out|   32|     ap_fifo|          IC_out|       pointer|
+|IC_out_full_n          |   in|    1|     ap_fifo|          IC_out|       pointer|
+|IC_out_write           |  out|    1|     ap_fifo|          IC_out|       pointer|
+|IC_out3_din            |  out|   32|     ap_fifo|         IC_out3|       pointer|
+|IC_out3_full_n         |   in|    1|     ap_fifo|         IC_out3|       pointer|
+|IC_out3_write          |  out|    1|     ap_fifo|         IC_out3|       pointer|
+|OC_out_din             |  out|   32|     ap_fifo|          OC_out|       pointer|
+|OC_out_full_n          |   in|    1|     ap_fifo|          OC_out|       pointer|
+|OC_out_write           |  out|    1|     ap_fifo|          OC_out|       pointer|
+|OC_out4_din            |  out|   32|     ap_fifo|         OC_out4|       pointer|
+|OC_out4_full_n         |   in|    1|     ap_fifo|         OC_out4|       pointer|
+|OC_out4_write          |  out|    1|     ap_fifo|         OC_out4|       pointer|
+|OC_out5_din            |  out|   32|     ap_fifo|         OC_out5|       pointer|
+|OC_out5_full_n         |   in|    1|     ap_fifo|         OC_out5|       pointer|
+|OC_out5_write          |  out|    1|     ap_fifo|         OC_out5|       pointer|
+|batch_out_din          |  out|   32|     ap_fifo|       batch_out|       pointer|
+|batch_out_full_n       |   in|    1|     ap_fifo|       batch_out|       pointer|
+|batch_out_write        |  out|    1|     ap_fifo|       batch_out|       pointer|
+|batch_out6_din         |  out|   32|     ap_fifo|      batch_out6|       pointer|
+|batch_out6_full_n      |   in|    1|     ap_fifo|      batch_out6|       pointer|
+|batch_out6_write       |  out|    1|     ap_fifo|      batch_out6|       pointer|
+|batch_out7_din         |  out|   32|     ap_fifo|      batch_out7|       pointer|
+|batch_out7_full_n      |   in|    1|     ap_fifo|      batch_out7|       pointer|
+|batch_out7_write       |  out|    1|     ap_fifo|      batch_out7|       pointer|
+|batch_out8_din         |  out|   32|     ap_fifo|      batch_out8|       pointer|
+|batch_out8_full_n      |   in|    1|     ap_fifo|      batch_out8|       pointer|
+|batch_out8_write       |  out|    1|     ap_fifo|      batch_out8|       pointer|
+|STRIDE_2_out_din       |  out|    1|     ap_fifo|    STRIDE_2_out|       pointer|
+|STRIDE_2_out_full_n    |   in|    1|     ap_fifo|    STRIDE_2_out|       pointer|
+|STRIDE_2_out_write     |  out|    1|     ap_fifo|    STRIDE_2_out|       pointer|
+|STRIDE_2_out9_din      |  out|    1|     ap_fifo|   STRIDE_2_out9|       pointer|
+|STRIDE_2_out9_full_n   |   in|    1|     ap_fifo|   STRIDE_2_out9|       pointer|
+|STRIDE_2_out9_write    |  out|    1|     ap_fifo|   STRIDE_2_out9|       pointer|
+|STRIDE_2_out10_din     |  out|    1|     ap_fifo|  STRIDE_2_out10|       pointer|
+|STRIDE_2_out10_full_n  |   in|    1|     ap_fifo|  STRIDE_2_out10|       pointer|
+|STRIDE_2_out10_write   |  out|    1|     ap_fifo|  STRIDE_2_out10|       pointer|
+|skip3_out_din          |  out|    1|     ap_fifo|       skip3_out|       pointer|
+|skip3_out_full_n       |   in|    1|     ap_fifo|       skip3_out|       pointer|
+|skip3_out_write        |  out|    1|     ap_fifo|       skip3_out|       pointer|
+|skip3_out11_din        |  out|    1|     ap_fifo|     skip3_out11|       pointer|
+|skip3_out11_full_n     |   in|    1|     ap_fifo|     skip3_out11|       pointer|
+|skip3_out11_write      |  out|    1|     ap_fifo|     skip3_out11|       pointer|
+|skip3_out12_din        |  out|    1|     ap_fifo|     skip3_out12|       pointer|
+|skip3_out12_full_n     |   in|    1|     ap_fifo|     skip3_out12|       pointer|
+|skip3_out12_write      |  out|    1|     ap_fifo|     skip3_out12|       pointer|
+|skip3_out13_din        |  out|    1|     ap_fifo|     skip3_out13|       pointer|
+|skip3_out13_full_n     |   in|    1|     ap_fifo|     skip3_out13|       pointer|
+|skip3_out13_write      |  out|    1|     ap_fifo|     skip3_out13|       pointer|
+|skip3_out14_din        |  out|    1|     ap_fifo|     skip3_out14|       pointer|
+|skip3_out14_full_n     |   in|    1|     ap_fifo|     skip3_out14|       pointer|
+|skip3_out14_write      |  out|    1|     ap_fifo|     skip3_out14|       pointer|
+|skip3_out15_din        |  out|    1|     ap_fifo|     skip3_out15|       pointer|
+|skip3_out15_full_n     |   in|    1|     ap_fifo|     skip3_out15|       pointer|
+|skip3_out15_write      |  out|    1|     ap_fifo|     skip3_out15|       pointer|
+|skip1_out_din          |  out|    1|     ap_fifo|       skip1_out|       pointer|
+|skip1_out_full_n       |   in|    1|     ap_fifo|       skip1_out|       pointer|
+|skip1_out_write        |  out|    1|     ap_fifo|       skip1_out|       pointer|
+|skip1_out16_din        |  out|    1|     ap_fifo|     skip1_out16|       pointer|
+|skip1_out16_full_n     |   in|    1|     ap_fifo|     skip1_out16|       pointer|
+|skip1_out16_write      |  out|    1|     ap_fifo|     skip1_out16|       pointer|
+|deform_out_din         |  out|    1|     ap_fifo|      deform_out|       pointer|
+|deform_out_full_n      |   in|    1|     ap_fifo|      deform_out|       pointer|
+|deform_out_write       |  out|    1|     ap_fifo|      deform_out|       pointer|
+|deform_out17_din       |  out|    1|     ap_fifo|    deform_out17|       pointer|
+|deform_out17_full_n    |   in|    1|     ap_fifo|    deform_out17|       pointer|
+|deform_out17_write     |  out|    1|     ap_fifo|    deform_out17|       pointer|
+|relu1_out_din          |  out|    1|     ap_fifo|       relu1_out|       pointer|
+|relu1_out_full_n       |   in|    1|     ap_fifo|       relu1_out|       pointer|
+|relu1_out_write        |  out|    1|     ap_fifo|       relu1_out|       pointer|
+|relu3_out_din          |  out|    1|     ap_fifo|       relu3_out|       pointer|
+|relu3_out_full_n       |   in|    1|     ap_fifo|       relu3_out|       pointer|
+|relu3_out_write        |  out|    1|     ap_fifo|       relu3_out|       pointer|
++-----------------------+-----+-----+------------+----------------+--------------+
+

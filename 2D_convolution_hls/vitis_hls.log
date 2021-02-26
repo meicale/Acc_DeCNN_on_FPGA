@@ -1,0 +1,33 @@
+INFO: [HLS 200-10] Running '/usr/vitis/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'bill' on host 'bill-KING' (Linux_x86_64 version 4.15.0-133-generic) on Thu Feb 18 10:57:36 CST 2021
+INFO: [HLS 200-10] On os Ubuntu 16.04.7 LTS
+INFO: [HLS 200-10] In directory '/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer'
+Sourcing Tcl script '/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/proj_2D_convolution_with_linebuffer/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project proj_2D_convolution_with_linebuffer 
+INFO: [HLS 200-10] Opening project '/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/proj_2D_convolution_with_linebuffer'.
+INFO: [HLS 200-1510] Running: set_top filter11x11_strm 
+INFO: [HLS 200-1510] Running: add_files convolution.cpp 
+INFO: [HLS 200-10] Adding design file 'convolution.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb convolution_test.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'convolution_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/proj_2D_convolution_with_linebuffer/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.66ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1510] Running: create_clock -period 6.66 -name default 
+INFO: [HLS 200-1510] Running: csim_design -profile -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../convolution_test.cpp in debug mode
+   Compiling ../../../../convolution.cpp in debug mode
+   Generating csim.exe
+
+*** TEST PASSED ***
+The maximum depth reached by any of the 4 hls::stream() instances in the design is 32400
+   Generating dot files
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.67 seconds. CPU system time: 0.19 seconds. Elapsed time: 1.67 seconds; current allocated memory: 191.554 MB.

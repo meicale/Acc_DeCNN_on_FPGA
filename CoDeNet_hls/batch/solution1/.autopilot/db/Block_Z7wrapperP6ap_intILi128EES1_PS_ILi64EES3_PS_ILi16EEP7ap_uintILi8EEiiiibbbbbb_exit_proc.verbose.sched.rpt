@@ -1,0 +1,212 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc'
+================================================================
+* Date:           Wed Feb 24 15:49:52 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  2.020 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       10|       10|  30.000 ns|  30.000 ns|   10|   10|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.51>
+ST_1 : Operation 12 [1/1] (1.09ns)   --->   "%STRIDE_2_read = read i1 @_ssdm_op_Read.ap_fifo.i1P0A, i1 %STRIDE_2" [deform.cpp:71]   --->   Operation 12 'read' 'STRIDE_2_read' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 3> <FIFO>
+ST_1 : Operation 13 [1/1] (1.09ns)   --->   "%batch_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %batch" [deform.cpp:93]   --->   Operation 13 'read' 'batch_read' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (1.09ns)   --->   "%D_V_loc_read = read i16 @_ssdm_op_Read.ap_fifo.i16P0A, i16 %D_V_loc"   --->   Operation 14 'read' 'D_V_loc_read' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i15 @_ssdm_op_PartSelect.i15.i16.i32.i32, i16 %D_V_loc_read, i32 1, i32 15"   --->   Operation 15 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%zext_ln1497 = zext i15 %lshr_ln"   --->   Operation 16 'zext' 'zext_ln1497' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.42ns)   --->   "%select_ln71 = select i1 %STRIDE_2_read, i16 %zext_ln1497, i16 %D_V_loc_read" [deform.cpp:71]   --->   Operation 17 'select' 'select_ln71' <Predicate = true> <Delay = 0.42> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.42> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 0.69>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln71 = zext i16 %select_ln71" [deform.cpp:71]   --->   Operation 18 'zext' 'zext_ln71' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [4/4] (0.69ns) (root node of the DSP)   --->   "%mul_ln93 = mul i32 %zext_ln71, i32 %zext_ln71" [deform.cpp:93]   --->   Operation 19 'mul' 'mul_ln93' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 3 <SV = 2> <Delay = 0.69>
+ST_3 : Operation 20 [3/4] (0.69ns) (root node of the DSP)   --->   "%mul_ln93 = mul i32 %zext_ln71, i32 %zext_ln71" [deform.cpp:93]   --->   Operation 20 'mul' 'mul_ln93' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 0.69>
+ST_4 : Operation 21 [2/4] (0.69ns) (root node of the DSP)   --->   "%mul_ln93 = mul i32 %zext_ln71, i32 %zext_ln71" [deform.cpp:93]   --->   Operation 21 'mul' 'mul_ln93' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 22 [1/4] (0.00ns) (root node of the DSP)   --->   "%mul_ln93 = mul i32 %zext_ln71, i32 %zext_ln71" [deform.cpp:93]   --->   Operation 22 'mul' 'mul_ln93' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 6 <SV = 5> <Delay = 2.02>
+ST_6 : Operation 23 [5/5] (2.02ns)   --->   "%mul_ln93_1 = mul i32 %mul_ln93, i32 %batch_read" [deform.cpp:93]   --->   Operation 23 'mul' 'mul_ln93_1' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 2.02>
+ST_7 : Operation 24 [4/5] (2.02ns)   --->   "%mul_ln93_1 = mul i32 %mul_ln93, i32 %batch_read" [deform.cpp:93]   --->   Operation 24 'mul' 'mul_ln93_1' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 2.02>
+ST_8 : Operation 25 [3/5] (2.02ns)   --->   "%mul_ln93_1 = mul i32 %mul_ln93, i32 %batch_read" [deform.cpp:93]   --->   Operation 25 'mul' 'mul_ln93_1' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 2.02>
+ST_9 : Operation 26 [2/5] (2.02ns)   --->   "%mul_ln93_1 = mul i32 %mul_ln93, i32 %batch_read" [deform.cpp:93]   --->   Operation 26 'mul' 'mul_ln93_1' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 2.02>
+ST_10 : Operation 27 [1/5] (2.02ns)   --->   "%mul_ln93_1 = mul i32 %mul_ln93, i32 %batch_read" [deform.cpp:93]   --->   Operation 27 'mul' 'mul_ln93_1' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 1.09>
+ST_11 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %batch, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %STRIDE_2, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %D_V_loc, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mul_ln93_1_loc_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 32 [1/1] (1.09ns)   --->   "%write_ln93 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %mul_ln93_1_loc_out, i32 %mul_ln93_1" [deform.cpp:93]   --->   Operation 32 'write' 'write_ln93' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_11 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mul_ln93_1_loc_out1, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 34 [1/1] (1.09ns)   --->   "%write_ln93 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %mul_ln93_1_loc_out1, i32 %mul_ln93_1" [deform.cpp:93]   --->   Operation 34 'write' 'write_ln93' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_11 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mul_ln93_1_loc_out2, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 36 [1/1] (1.09ns)   --->   "%write_ln93 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %mul_ln93_1_loc_out2, i32 %mul_ln93_1" [deform.cpp:93]   --->   Operation 36 'write' 'write_ln93' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_11 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mul_ln93_1_loc_out3, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 38 [1/1] (1.09ns)   --->   "%write_ln93 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %mul_ln93_1_loc_out3, i32 %mul_ln93_1" [deform.cpp:93]   --->   Operation 38 'write' 'write_ln93' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.14> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 7> <FIFO>
+ST_11 : Operation 39 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 39 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3ns, clock uncertainty: 0.81ns.
+
+ <State 1>: 1.52ns
+The critical path consists of the following:
+	fifo read on port 'STRIDE_2' (deform.cpp:71) [11]  (1.1 ns)
+	'select' operation ('select_ln71', deform.cpp:71) [16]  (0.42 ns)
+
+ <State 2>: 0.698ns
+The critical path consists of the following:
+	'mul' operation of DSP[18] ('mul_ln93', deform.cpp:93) [18]  (0.698 ns)
+
+ <State 3>: 0.698ns
+The critical path consists of the following:
+	'mul' operation of DSP[18] ('mul_ln93', deform.cpp:93) [18]  (0.698 ns)
+
+ <State 4>: 0.698ns
+The critical path consists of the following:
+	'mul' operation of DSP[18] ('mul_ln93', deform.cpp:93) [18]  (0.698 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln93_1', deform.cpp:93) [19]  (2.02 ns)
+
+ <State 7>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln93_1', deform.cpp:93) [19]  (2.02 ns)
+
+ <State 8>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln93_1', deform.cpp:93) [19]  (2.02 ns)
+
+ <State 9>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln93_1', deform.cpp:93) [19]  (2.02 ns)
+
+ <State 10>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln93_1', deform.cpp:93) [19]  (2.02 ns)
+
+ <State 11>: 1.1ns
+The critical path consists of the following:
+	fifo write on port 'mul_ln93_1_loc_out' (deform.cpp:93) [21]  (1.1 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

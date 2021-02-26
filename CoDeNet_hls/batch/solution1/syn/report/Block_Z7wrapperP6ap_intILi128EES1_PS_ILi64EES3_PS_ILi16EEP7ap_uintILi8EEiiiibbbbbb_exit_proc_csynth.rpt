@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb_exit_proc'
+================================================================
+* Date:           Wed Feb 24 15:50:13 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  2.020 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       10|       10|  30.000 ns|  30.000 ns|   10|   10|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    1|       -|      -|    -|
+|Expression       |        -|    -|       0|     20|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    0|     215|      1|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    137|    -|
+|Register         |        -|    -|     124|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    1|     339|    158|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   ~0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |         Instance        |       Module       | BRAM_18K| DSP|  FF | LUT| URAM|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |mul_32s_32s_32_5_1_U568  |mul_32s_32s_32_5_1  |        0|   0|  215|   1|    0|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |Total                    |                    |        0|   0|  215|   1|    0|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+
+    * DSP: 
+    +-------------------------------+--------------------------+-----------+
+    |            Instance           |          Module          | Expression|
+    +-------------------------------+--------------------------+-----------+
+    |mul_mul_16ns_16ns_32_4_1_U569  |mul_mul_16ns_16ns_32_4_1  |    i0 * i0|
+    +-------------------------------+--------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |ap_block_state1        |        or|   0|  0|   2|           1|           1|
+    |ap_block_state11       |        or|   0|  0|   2|           1|           1|
+    |select_ln71_fu_102_p3  |    select|   0|  0|  16|           1|          16|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  20|           3|          18|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |D_V_loc_blk_n              |   9|          2|    1|          2|
+    |STRIDE_2_blk_n             |   9|          2|    1|          2|
+    |ap_NS_fsm                  |  65|         12|    1|         12|
+    |ap_done                    |   9|          2|    1|          2|
+    |batch_blk_n                |   9|          2|    1|          2|
+    |mul_ln93_1_loc_out1_blk_n  |   9|          2|    1|          2|
+    |mul_ln93_1_loc_out2_blk_n  |   9|          2|    1|          2|
+    |mul_ln93_1_loc_out3_blk_n  |   9|          2|    1|          2|
+    |mul_ln93_1_loc_out_blk_n   |   9|          2|    1|          2|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      | 137|         28|    9|         28|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------+----+----+-----+-----------+
+    |         Name        | FF | LUT| Bits| Const Bits|
+    +---------------------+----+----+-----+-----------+
+    |ap_CS_fsm            |  11|   0|   11|          0|
+    |ap_done_reg          |   1|   0|    1|          0|
+    |batch_read_reg_123   |  32|   0|   32|          0|
+    |mul_ln93_1_reg_144   |  32|   0|   32|          0|
+    |mul_ln93_reg_139     |  32|   0|   32|          0|
+    |select_ln71_reg_128  |  16|   0|   16|          0|
+    +---------------------+----+----+-----+-----------+
+    |Total                | 124|   0|  124|          0|
+    +---------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-----------------------------------------------------------------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |                                         Source Object                                         |    C Type    |
++----------------------------+-----+-----+------------+-----------------------------------------------------------------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_continue                 |   in|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  Block__Z7wrapperP6ap_intILi128EES1_PS_ILi64EES3_PS_ILi16EEP7ap_uintILi8EEiiiibbbbbb.exit_proc|  return value|
+|D_V_loc_dout                |   in|   16|     ap_fifo|                                                                                        D_V_loc|       pointer|
+|D_V_loc_empty_n             |   in|    1|     ap_fifo|                                                                                        D_V_loc|       pointer|
+|D_V_loc_read                |  out|    1|     ap_fifo|                                                                                        D_V_loc|       pointer|
+|STRIDE_2_dout               |   in|    1|     ap_fifo|                                                                                       STRIDE_2|       pointer|
+|STRIDE_2_empty_n            |   in|    1|     ap_fifo|                                                                                       STRIDE_2|       pointer|
+|STRIDE_2_read               |  out|    1|     ap_fifo|                                                                                       STRIDE_2|       pointer|
+|batch_dout                  |   in|   32|     ap_fifo|                                                                                          batch|       pointer|
+|batch_empty_n               |   in|    1|     ap_fifo|                                                                                          batch|       pointer|
+|batch_read                  |  out|    1|     ap_fifo|                                                                                          batch|       pointer|
+|mul_ln93_1_loc_out_din      |  out|   32|     ap_fifo|                                                                             mul_ln93_1_loc_out|       pointer|
+|mul_ln93_1_loc_out_full_n   |   in|    1|     ap_fifo|                                                                             mul_ln93_1_loc_out|       pointer|
+|mul_ln93_1_loc_out_write    |  out|    1|     ap_fifo|                                                                             mul_ln93_1_loc_out|       pointer|
+|mul_ln93_1_loc_out1_din     |  out|   32|     ap_fifo|                                                                            mul_ln93_1_loc_out1|       pointer|
+|mul_ln93_1_loc_out1_full_n  |   in|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out1|       pointer|
+|mul_ln93_1_loc_out1_write   |  out|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out1|       pointer|
+|mul_ln93_1_loc_out2_din     |  out|   32|     ap_fifo|                                                                            mul_ln93_1_loc_out2|       pointer|
+|mul_ln93_1_loc_out2_full_n  |   in|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out2|       pointer|
+|mul_ln93_1_loc_out2_write   |  out|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out2|       pointer|
+|mul_ln93_1_loc_out3_din     |  out|   32|     ap_fifo|                                                                            mul_ln93_1_loc_out3|       pointer|
+|mul_ln93_1_loc_out3_full_n  |   in|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out3|       pointer|
+|mul_ln93_1_loc_out3_write   |  out|    1|     ap_fifo|                                                                            mul_ln93_1_loc_out3|       pointer|
++----------------------------+-----+-----+------------+-----------------------------------------------------------------------------------------------+--------------+
+

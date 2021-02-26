@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="convolution.cpp" path="/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/convolution.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="convolution_test.cpp" path="/home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/convolution_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

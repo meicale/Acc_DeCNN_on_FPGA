@@ -1,0 +1,233 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_split7796_proc'
+================================================================
+* Date:           Wed Feb 24 15:50:08 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  2.020 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        9|        9|  27.000 ns|  27.000 ns|    9|    9|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    2|       -|      -|    -|
+|Expression       |        -|    -|       0|      4|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    0|     215|      1|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    266|    -|
+|Register         |        -|    -|     168|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    2|     383|    271|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   ~0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |         Instance        |       Module       | BRAM_18K| DSP|  FF | LUT| URAM|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |mul_32s_32s_32_5_1_U114  |mul_32s_32s_32_5_1  |        0|   0|  215|   1|    0|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+    |Total                    |                    |        0|   0|  215|   1|    0|
+    +-------------------------+--------------------+---------+----+-----+----+-----+
+
+    * DSP: 
+    +-------------------------------+--------------------------+-----------+
+    |            Instance           |          Module          | Expression|
+    +-------------------------------+--------------------------+-----------+
+    |mul_mul_16ns_16ns_32_4_1_U115  |mul_mul_16ns_16ns_32_4_1  |    i0 * i0|
+    |mul_mul_16ns_16ns_32_4_1_U116  |mul_mul_16ns_16ns_32_4_1  |    i0 * i1|
+    +-------------------------------+--------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------+----------+----+---+----+------------+------------+
+    |   Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------+----------+----+---+----+------------+------------+
+    |ap_block_state1   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state10  |        or|   0|  0|   2|           1|           1|
+    +------------------+----------+----+---+----+------------+------------+
+    |Total             |          |   0|  0|   4|           2|           2|
+    +------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |D_V_out_out2_blk_n          |   9|          2|    1|          2|
+    |D_V_out_out_blk_n           |   9|          2|    1|          2|
+    |D_blk_n                     |   9|          2|    1|          2|
+    |IC_V_out_out_blk_n          |   9|          2|    1|          2|
+    |IC_blk_n                    |   9|          2|    1|          2|
+    |OC_V_out_out3_blk_n         |   9|          2|    1|          2|
+    |OC_V_out_out_blk_n          |   9|          2|    1|          2|
+    |OC_blk_n                    |   9|          2|    1|          2|
+    |ap_NS_fsm                   |  59|         11|    1|         11|
+    |ap_done                     |   9|          2|    1|          2|
+    |batch_blk_n                 |   9|          2|    1|          2|
+    |batch_out1_blk_n            |   9|          2|    1|          2|
+    |batch_out_blk_n             |   9|          2|    1|          2|
+    |mul_ln31_1_out_out5_blk_n   |   9|          2|    1|          2|
+    |mul_ln31_1_out_out6_blk_n   |   9|          2|    1|          2|
+    |mul_ln31_1_out_out_blk_n    |   9|          2|    1|          2|
+    |real_start                  |   9|          2|    1|          2|
+    |ret_V_1_out_out4_blk_n      |   9|          2|    1|          2|
+    |ret_V_1_out_out_blk_n       |   9|          2|    1|          2|
+    |ret_V_cast_out_out10_blk_n  |   9|          2|    1|          2|
+    |ret_V_cast_out_out7_blk_n   |   9|          2|    1|          2|
+    |ret_V_cast_out_out8_blk_n   |   9|          2|    1|          2|
+    |ret_V_cast_out_out9_blk_n   |   9|          2|    1|          2|
+    |ret_V_cast_out_out_blk_n    |   9|          2|    1|          2|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       | 266|         57|   24|         57|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------+----+----+-----+-----------+
+    |        Name        | FF | LUT| Bits| Const Bits|
+    +--------------------+----+----+-----+-----------+
+    |D_V_reg_270         |  16|   0|   16|          0|
+    |IC_V_reg_282        |  16|   0|   16|          0|
+    |OC_V_reg_288        |  16|   0|   16|          0|
+    |ap_CS_fsm           |  10|   0|   10|          0|
+    |ap_done_reg         |   1|   0|    1|          0|
+    |batch_read_reg_263  |  32|   0|   32|          0|
+    |mul_ln31_1_reg_319  |  32|   0|   32|          0|
+    |mul_ln31_reg_304    |  32|   0|   32|          0|
+    |start_once_reg      |   1|   0|    1|          0|
+    |trunc_ln_reg_295    |  12|   0|   12|          0|
+    +--------------------+----+----+-----+-----------+
+    |Total               | 168|   0|  168|          0|
+    +--------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+-----------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++-----------------------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk                       |   in|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_rst                       |   in|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_start                     |   in|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|start_full_n                 |   in|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_done                      |  out|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_continue                  |   in|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_idle                      |  out|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|ap_ready                     |  out|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|start_out                    |  out|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|start_write                  |  out|    1|  ap_ctrl_hs|  Block_.split7796_proc|  return value|
+|D_dout                       |   in|   32|     ap_fifo|                      D|       pointer|
+|D_empty_n                    |   in|    1|     ap_fifo|                      D|       pointer|
+|D_read                       |  out|    1|     ap_fifo|                      D|       pointer|
+|IC_dout                      |   in|   32|     ap_fifo|                     IC|       pointer|
+|IC_empty_n                   |   in|    1|     ap_fifo|                     IC|       pointer|
+|IC_read                      |  out|    1|     ap_fifo|                     IC|       pointer|
+|OC_dout                      |   in|   32|     ap_fifo|                     OC|       pointer|
+|OC_empty_n                   |   in|    1|     ap_fifo|                     OC|       pointer|
+|OC_read                      |  out|    1|     ap_fifo|                     OC|       pointer|
+|batch_dout                   |   in|   32|     ap_fifo|                  batch|       pointer|
+|batch_empty_n                |   in|    1|     ap_fifo|                  batch|       pointer|
+|batch_read                   |  out|    1|     ap_fifo|                  batch|       pointer|
+|batch_out_din                |  out|   32|     ap_fifo|              batch_out|       pointer|
+|batch_out_full_n             |   in|    1|     ap_fifo|              batch_out|       pointer|
+|batch_out_write              |  out|    1|     ap_fifo|              batch_out|       pointer|
+|batch_out1_din               |  out|   32|     ap_fifo|             batch_out1|       pointer|
+|batch_out1_full_n            |   in|    1|     ap_fifo|             batch_out1|       pointer|
+|batch_out1_write             |  out|    1|     ap_fifo|             batch_out1|       pointer|
+|D_V_out_out_din              |  out|   16|     ap_fifo|            D_V_out_out|       pointer|
+|D_V_out_out_full_n           |   in|    1|     ap_fifo|            D_V_out_out|       pointer|
+|D_V_out_out_write            |  out|    1|     ap_fifo|            D_V_out_out|       pointer|
+|D_V_out_out2_din             |  out|   16|     ap_fifo|           D_V_out_out2|       pointer|
+|D_V_out_out2_full_n          |   in|    1|     ap_fifo|           D_V_out_out2|       pointer|
+|D_V_out_out2_write           |  out|    1|     ap_fifo|           D_V_out_out2|       pointer|
+|IC_V_out_out_din             |  out|   16|     ap_fifo|           IC_V_out_out|       pointer|
+|IC_V_out_out_full_n          |   in|    1|     ap_fifo|           IC_V_out_out|       pointer|
+|IC_V_out_out_write           |  out|    1|     ap_fifo|           IC_V_out_out|       pointer|
+|OC_V_out_out_din             |  out|   16|     ap_fifo|           OC_V_out_out|       pointer|
+|OC_V_out_out_full_n          |   in|    1|     ap_fifo|           OC_V_out_out|       pointer|
+|OC_V_out_out_write           |  out|    1|     ap_fifo|           OC_V_out_out|       pointer|
+|OC_V_out_out3_din            |  out|   16|     ap_fifo|          OC_V_out_out3|       pointer|
+|OC_V_out_out3_full_n         |   in|    1|     ap_fifo|          OC_V_out_out3|       pointer|
+|OC_V_out_out3_write          |  out|    1|     ap_fifo|          OC_V_out_out3|       pointer|
+|ret_V_1_out_out_din          |  out|   32|     ap_fifo|        ret_V_1_out_out|       pointer|
+|ret_V_1_out_out_full_n       |   in|    1|     ap_fifo|        ret_V_1_out_out|       pointer|
+|ret_V_1_out_out_write        |  out|    1|     ap_fifo|        ret_V_1_out_out|       pointer|
+|ret_V_1_out_out4_din         |  out|   32|     ap_fifo|       ret_V_1_out_out4|       pointer|
+|ret_V_1_out_out4_full_n      |   in|    1|     ap_fifo|       ret_V_1_out_out4|       pointer|
+|ret_V_1_out_out4_write       |  out|    1|     ap_fifo|       ret_V_1_out_out4|       pointer|
+|mul_ln31_1_out_out_din       |  out|   32|     ap_fifo|     mul_ln31_1_out_out|       pointer|
+|mul_ln31_1_out_out_full_n    |   in|    1|     ap_fifo|     mul_ln31_1_out_out|       pointer|
+|mul_ln31_1_out_out_write     |  out|    1|     ap_fifo|     mul_ln31_1_out_out|       pointer|
+|mul_ln31_1_out_out5_din      |  out|   32|     ap_fifo|    mul_ln31_1_out_out5|       pointer|
+|mul_ln31_1_out_out5_full_n   |   in|    1|     ap_fifo|    mul_ln31_1_out_out5|       pointer|
+|mul_ln31_1_out_out5_write    |  out|    1|     ap_fifo|    mul_ln31_1_out_out5|       pointer|
+|mul_ln31_1_out_out6_din      |  out|   32|     ap_fifo|    mul_ln31_1_out_out6|       pointer|
+|mul_ln31_1_out_out6_full_n   |   in|    1|     ap_fifo|    mul_ln31_1_out_out6|       pointer|
+|mul_ln31_1_out_out6_write    |  out|    1|     ap_fifo|    mul_ln31_1_out_out6|       pointer|
+|ret_V_cast_out_out_din       |  out|   12|     ap_fifo|     ret_V_cast_out_out|       pointer|
+|ret_V_cast_out_out_full_n    |   in|    1|     ap_fifo|     ret_V_cast_out_out|       pointer|
+|ret_V_cast_out_out_write     |  out|    1|     ap_fifo|     ret_V_cast_out_out|       pointer|
+|ret_V_cast_out_out7_din      |  out|   12|     ap_fifo|    ret_V_cast_out_out7|       pointer|
+|ret_V_cast_out_out7_full_n   |   in|    1|     ap_fifo|    ret_V_cast_out_out7|       pointer|
+|ret_V_cast_out_out7_write    |  out|    1|     ap_fifo|    ret_V_cast_out_out7|       pointer|
+|ret_V_cast_out_out8_din      |  out|   12|     ap_fifo|    ret_V_cast_out_out8|       pointer|
+|ret_V_cast_out_out8_full_n   |   in|    1|     ap_fifo|    ret_V_cast_out_out8|       pointer|
+|ret_V_cast_out_out8_write    |  out|    1|     ap_fifo|    ret_V_cast_out_out8|       pointer|
+|ret_V_cast_out_out9_din      |  out|   12|     ap_fifo|    ret_V_cast_out_out9|       pointer|
+|ret_V_cast_out_out9_full_n   |   in|    1|     ap_fifo|    ret_V_cast_out_out9|       pointer|
+|ret_V_cast_out_out9_write    |  out|    1|     ap_fifo|    ret_V_cast_out_out9|       pointer|
+|ret_V_cast_out_out10_din     |  out|   12|     ap_fifo|   ret_V_cast_out_out10|       pointer|
+|ret_V_cast_out_out10_full_n  |   in|    1|     ap_fifo|   ret_V_cast_out_out10|       pointer|
+|ret_V_cast_out_out10_write   |  out|    1|     ap_fifo|   ret_V_cast_out_out10|       pointer|
++-----------------------------+-----+-----+------------+-----------------------+--------------+
+

@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream\<unsigned int, 0\>::size' function" {
+	label="CFG for 'hls::stream\<unsigned int, 0\>::size' function";
+
+	Node0x3c2eeb0 [shape=record,filename="",linenumber="",label="{.predFake}"];
+	Node0x3c2eeb0 -> Node0x3ccdfc0[ callList="" memoryops="" filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h" execusionnum="157000"];
+	Node0x3ccdfc0 [shape=record,filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h",linenumber="300",label="{.succFake}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'hls::stream\<unsigned int, 0\>::write' function" {
+	label="CFG for 'hls::stream\<unsigned int, 0\>::write' function";
+
+	Node0x3c2bfb0 [shape=record,filename="",linenumber="",label="{.predFake}"];
+	Node0x3c2bfb0 -> Node0x3ccd6c0[ callList="" memoryops="" filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h" execusionnum="124600"];
+	Node0x3ccd6c0 [shape=record,filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h",linenumber="259",label="{.succFake|{<s0>T|<s1>F}}"];
+	Node0x3ccd6c0:s0 -> Node0x3c2d4c0[label="W:32401" callList="" memoryops="" filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h" execusionnum="32400"];
+	Node0x3ccd6c0:s1 -> Node0x3c2d4c0[label="W:92201"];
+	Node0x3c2d4c0 [shape=record,filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h",linenumber="262",label="{.predFake1}"];
+	Node0x3c2d4c0 -> Node0x3ccd880[ callList="" memoryops="" filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h" execusionnum="124600"];
+	Node0x3ccd880 [shape=record,filename="/usr/vitis/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h",linenumber="262",label="{.succFake2}"];
+}

@@ -1,0 +1,297 @@
+
+
+================================================================
+== Vitis HLS Report for 'M2S_repeat_16_16_ap_int_16_ap_int_256_s'
+================================================================
+* Date:           Wed Feb 24 15:49:53 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  2.020 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_35_1_VITIS_LOOP_36_2  |        ?|        ?|         4|          2|          1|     ?|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 1
+  Pipeline-0 : II = 2, D = 4, States = { 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 11 8 
+8 --> 9 
+9 --> 10 
+10 --> 7 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.62>
+ST_1 : Operation 12 [1/1] (1.09ns)   --->   "%skip = read i1 @_ssdm_op_Read.ap_fifo.i1P0A, i1 %skip3" [./dma.h:32->deform.cpp:94]   --->   Operation 12 'read' 'skip' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 4> <FIFO>
+ST_1 : Operation 13 [1/1] (1.09ns)   --->   "%batchD = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %mul_ln93_1_loc"   --->   Operation 13 'read' 'batchD' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (1.09ns)   --->   "%OCIC = read i12 @_ssdm_op_Read.ap_fifo.i12P0A, i12 %ret_V_cast_loc"   --->   Operation 14 'read' 'OCIC' <Predicate = true> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 3> <FIFO>
+ST_1 : Operation 15 [1/1] (0.52ns)   --->   "%REP = select i1 %skip, i32 0, i32 %batchD" [./dma.h:34->deform.cpp:94]   --->   Operation 15 'select' 'REP' <Predicate = true> <Delay = 0.52> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.52> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%zext_ln32 = zext i32 %REP" [./dma.h:32->deform.cpp:94]   --->   Operation 16 'zext' 'zext_ln32' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln32_4 = zext i12 %OCIC" [./dma.h:32->deform.cpp:94]   --->   Operation 17 'zext' 'zext_ln32_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [5/5] (2.02ns)   --->   "%mul_ln32 = mul i44 %zext_ln32, i44 %zext_ln32_4" [./dma.h:32->deform.cpp:94]   --->   Operation 18 'mul' 'mul_ln32' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 2.02>
+ST_3 : Operation 19 [4/5] (2.02ns)   --->   "%mul_ln32 = mul i44 %zext_ln32, i44 %zext_ln32_4" [./dma.h:32->deform.cpp:94]   --->   Operation 19 'mul' 'mul_ln32' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 2.02>
+ST_4 : Operation 20 [3/5] (2.02ns)   --->   "%mul_ln32 = mul i44 %zext_ln32, i44 %zext_ln32_4" [./dma.h:32->deform.cpp:94]   --->   Operation 20 'mul' 'mul_ln32' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 2.02>
+ST_5 : Operation 21 [2/5] (2.02ns)   --->   "%mul_ln32 = mul i44 %zext_ln32, i44 %zext_ln32_4" [./dma.h:32->deform.cpp:94]   --->   Operation 21 'mul' 'mul_ln32' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 2.02>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %s_bias_1, void @empty_34, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_18, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_18"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %skip3, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mul_ln93_1_loc, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i12 %ret_V_cast_loc, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %s_bias_1, void @empty_34, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_18, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_18"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/5] (2.02ns)   --->   "%mul_ln32 = mul i44 %zext_ln32, i44 %zext_ln32_4" [./dma.h:32->deform.cpp:94]   --->   Operation 27 'mul' 'mul_ln32' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 28 [1/1] (0.48ns)   --->   "%br_ln35 = br void" [./dma.h:35->deform.cpp:94]   --->   Operation 28 'br' 'br_ln35' <Predicate = true> <Delay = 0.48>
+
+State 7 <SV = 6> <Delay = 1.29>
+ST_7 : Operation 29 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i44 0, void %entry, i44 %add_ln35, void %._crit_edge.loopexit.i.i" [./dma.h:35->deform.cpp:94]   --->   Operation 29 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 30 [1/1] (0.00ns)   --->   "%i = phi i12 0, void %entry, i12 %add_ln36, void %._crit_edge.loopexit.i.i" [./dma.h:36->deform.cpp:94]   --->   Operation 30 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 31 [1/1] (1.25ns)   --->   "%add_ln35 = add i44 %indvar_flatten, i44 1" [./dma.h:35->deform.cpp:94]   --->   Operation 31 'add' 'add_ln35' <Predicate = true> <Delay = 1.25> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 32 [1/1] (1.29ns)   --->   "%icmp_ln35 = icmp_eq  i44 %indvar_flatten, i44 %mul_ln32" [./dma.h:35->deform.cpp:94]   --->   Operation 32 'icmp' 'icmp_ln35' <Predicate = true> <Delay = 1.29> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 33 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %icmp_ln35, void %._crit_edge.loopexit.i.i, void %.exit" [./dma.h:35->deform.cpp:94]   --->   Operation 33 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 34 [1/1] (0.86ns)   --->   "%icmp_ln36 = icmp_eq  i12 %i, i12 %OCIC" [./dma.h:36->deform.cpp:94]   --->   Operation 34 'icmp' 'icmp_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 35 [1/1] (0.43ns)   --->   "%select_ln35 = select i1 %icmp_ln36, i12 0, i12 %i" [./dma.h:35->deform.cpp:94]   --->   Operation 35 'select' 'select_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.43> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.52> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln215 = trunc i12 %select_ln35"   --->   Operation 36 'trunc' 'trunc_ln215' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 1.35>
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i6.i1, i6 %trunc_ln215, i1 0"   --->   Operation 37 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln215 = zext i7 %shl_ln"   --->   Operation 38 'zext' 'zext_ln215' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%bias_buffer3_V_0_addr = getelementptr i16 %bias_buffer3_V_0, i64 0, i64 %zext_ln215"   --->   Operation 39 'getelementptr' 'bias_buffer3_V_0_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 40 [2/2] (1.35ns)   --->   "%bias_buffer3_V_0_load = load i7 %bias_buffer3_V_0_addr"   --->   Operation 40 'load' 'bias_buffer3_V_0_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%bias_buffer3_V_1_addr = getelementptr i16 %bias_buffer3_V_1, i64 0, i64 %zext_ln215"   --->   Operation 41 'getelementptr' 'bias_buffer3_V_1_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 42 [2/2] (1.35ns)   --->   "%bias_buffer3_V_1_load = load i7 %bias_buffer3_V_1_addr"   --->   Operation 42 'load' 'bias_buffer3_V_1_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%bias_buffer3_V_2_addr = getelementptr i16 %bias_buffer3_V_2, i64 0, i64 %zext_ln215"   --->   Operation 43 'getelementptr' 'bias_buffer3_V_2_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 44 [2/2] (1.35ns)   --->   "%bias_buffer3_V_2_load = load i7 %bias_buffer3_V_2_addr"   --->   Operation 44 'load' 'bias_buffer3_V_2_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%bias_buffer3_V_3_addr = getelementptr i16 %bias_buffer3_V_3, i64 0, i64 %zext_ln215"   --->   Operation 45 'getelementptr' 'bias_buffer3_V_3_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 46 [2/2] (1.35ns)   --->   "%bias_buffer3_V_3_load = load i7 %bias_buffer3_V_3_addr"   --->   Operation 46 'load' 'bias_buffer3_V_3_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%bias_buffer3_V_4_addr = getelementptr i16 %bias_buffer3_V_4, i64 0, i64 %zext_ln215"   --->   Operation 47 'getelementptr' 'bias_buffer3_V_4_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 48 [2/2] (1.35ns)   --->   "%bias_buffer3_V_4_load = load i7 %bias_buffer3_V_4_addr"   --->   Operation 48 'load' 'bias_buffer3_V_4_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%bias_buffer3_V_5_addr = getelementptr i16 %bias_buffer3_V_5, i64 0, i64 %zext_ln215"   --->   Operation 49 'getelementptr' 'bias_buffer3_V_5_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 50 [2/2] (1.35ns)   --->   "%bias_buffer3_V_5_load = load i7 %bias_buffer3_V_5_addr"   --->   Operation 50 'load' 'bias_buffer3_V_5_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%bias_buffer3_V_6_addr = getelementptr i16 %bias_buffer3_V_6, i64 0, i64 %zext_ln215"   --->   Operation 51 'getelementptr' 'bias_buffer3_V_6_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 52 [2/2] (1.35ns)   --->   "%bias_buffer3_V_6_load = load i7 %bias_buffer3_V_6_addr"   --->   Operation 52 'load' 'bias_buffer3_V_6_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%bias_buffer3_V_7_addr = getelementptr i16 %bias_buffer3_V_7, i64 0, i64 %zext_ln215"   --->   Operation 53 'getelementptr' 'bias_buffer3_V_7_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 54 [2/2] (1.35ns)   --->   "%bias_buffer3_V_7_load = load i7 %bias_buffer3_V_7_addr"   --->   Operation 54 'load' 'bias_buffer3_V_7_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%or_ln215 = or i7 %shl_ln, i7 1"   --->   Operation 55 'or' 'or_ln215' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 56 [1/1] (0.00ns)   --->   "%zext_ln215_4 = zext i7 %or_ln215"   --->   Operation 56 'zext' 'zext_ln215_4' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 57 [1/1] (0.00ns)   --->   "%bias_buffer3_V_0_addr_1 = getelementptr i16 %bias_buffer3_V_0, i64 0, i64 %zext_ln215_4"   --->   Operation 57 'getelementptr' 'bias_buffer3_V_0_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 58 [2/2] (1.35ns)   --->   "%bias_buffer3_V_0_load_1 = load i7 %bias_buffer3_V_0_addr_1"   --->   Operation 58 'load' 'bias_buffer3_V_0_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%bias_buffer3_V_1_addr_1 = getelementptr i16 %bias_buffer3_V_1, i64 0, i64 %zext_ln215_4"   --->   Operation 59 'getelementptr' 'bias_buffer3_V_1_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 60 [2/2] (1.35ns)   --->   "%bias_buffer3_V_1_load_1 = load i7 %bias_buffer3_V_1_addr_1"   --->   Operation 60 'load' 'bias_buffer3_V_1_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%bias_buffer3_V_2_addr_1 = getelementptr i16 %bias_buffer3_V_2, i64 0, i64 %zext_ln215_4"   --->   Operation 61 'getelementptr' 'bias_buffer3_V_2_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 62 [2/2] (1.35ns)   --->   "%bias_buffer3_V_2_load_1 = load i7 %bias_buffer3_V_2_addr_1"   --->   Operation 62 'load' 'bias_buffer3_V_2_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 63 [1/1] (0.00ns)   --->   "%bias_buffer3_V_3_addr_1 = getelementptr i16 %bias_buffer3_V_3, i64 0, i64 %zext_ln215_4"   --->   Operation 63 'getelementptr' 'bias_buffer3_V_3_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 64 [2/2] (1.35ns)   --->   "%bias_buffer3_V_3_load_1 = load i7 %bias_buffer3_V_3_addr_1"   --->   Operation 64 'load' 'bias_buffer3_V_3_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 65 [1/1] (0.00ns)   --->   "%bias_buffer3_V_4_addr_1 = getelementptr i16 %bias_buffer3_V_4, i64 0, i64 %zext_ln215_4"   --->   Operation 65 'getelementptr' 'bias_buffer3_V_4_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 66 [2/2] (1.35ns)   --->   "%bias_buffer3_V_4_load_1 = load i7 %bias_buffer3_V_4_addr_1"   --->   Operation 66 'load' 'bias_buffer3_V_4_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 67 [1/1] (0.00ns)   --->   "%bias_buffer3_V_5_addr_1 = getelementptr i16 %bias_buffer3_V_5, i64 0, i64 %zext_ln215_4"   --->   Operation 67 'getelementptr' 'bias_buffer3_V_5_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 68 [2/2] (1.35ns)   --->   "%bias_buffer3_V_5_load_1 = load i7 %bias_buffer3_V_5_addr_1"   --->   Operation 68 'load' 'bias_buffer3_V_5_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 69 [1/1] (0.00ns)   --->   "%bias_buffer3_V_6_addr_1 = getelementptr i16 %bias_buffer3_V_6, i64 0, i64 %zext_ln215_4"   --->   Operation 69 'getelementptr' 'bias_buffer3_V_6_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 70 [2/2] (1.35ns)   --->   "%bias_buffer3_V_6_load_1 = load i7 %bias_buffer3_V_6_addr_1"   --->   Operation 70 'load' 'bias_buffer3_V_6_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%bias_buffer3_V_7_addr_1 = getelementptr i16 %bias_buffer3_V_7, i64 0, i64 %zext_ln215_4"   --->   Operation 71 'getelementptr' 'bias_buffer3_V_7_addr_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_8 : Operation 72 [2/2] (1.35ns)   --->   "%bias_buffer3_V_7_load_1 = load i7 %bias_buffer3_V_7_addr_1"   --->   Operation 72 'load' 'bias_buffer3_V_7_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_8 : Operation 73 [1/1] (0.96ns)   --->   "%add_ln36 = add i12 %select_ln35, i12 1" [./dma.h:36->deform.cpp:94]   --->   Operation 73 'add' 'add_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.96> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 1.35>
+ST_9 : Operation 74 [1/2] (1.35ns)   --->   "%bias_buffer3_V_0_load = load i7 %bias_buffer3_V_0_addr"   --->   Operation 74 'load' 'bias_buffer3_V_0_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 75 [1/2] (1.35ns)   --->   "%bias_buffer3_V_1_load = load i7 %bias_buffer3_V_1_addr"   --->   Operation 75 'load' 'bias_buffer3_V_1_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 76 [1/2] (1.35ns)   --->   "%bias_buffer3_V_2_load = load i7 %bias_buffer3_V_2_addr"   --->   Operation 76 'load' 'bias_buffer3_V_2_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 77 [1/2] (1.35ns)   --->   "%bias_buffer3_V_3_load = load i7 %bias_buffer3_V_3_addr"   --->   Operation 77 'load' 'bias_buffer3_V_3_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 78 [1/2] (1.35ns)   --->   "%bias_buffer3_V_4_load = load i7 %bias_buffer3_V_4_addr"   --->   Operation 78 'load' 'bias_buffer3_V_4_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 79 [1/2] (1.35ns)   --->   "%bias_buffer3_V_5_load = load i7 %bias_buffer3_V_5_addr"   --->   Operation 79 'load' 'bias_buffer3_V_5_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 80 [1/2] (1.35ns)   --->   "%bias_buffer3_V_6_load = load i7 %bias_buffer3_V_6_addr"   --->   Operation 80 'load' 'bias_buffer3_V_6_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 81 [1/2] (1.35ns)   --->   "%bias_buffer3_V_7_load = load i7 %bias_buffer3_V_7_addr"   --->   Operation 81 'load' 'bias_buffer3_V_7_load' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 82 [1/2] (1.35ns)   --->   "%bias_buffer3_V_0_load_1 = load i7 %bias_buffer3_V_0_addr_1"   --->   Operation 82 'load' 'bias_buffer3_V_0_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 83 [1/2] (1.35ns)   --->   "%bias_buffer3_V_1_load_1 = load i7 %bias_buffer3_V_1_addr_1"   --->   Operation 83 'load' 'bias_buffer3_V_1_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 84 [1/2] (1.35ns)   --->   "%bias_buffer3_V_2_load_1 = load i7 %bias_buffer3_V_2_addr_1"   --->   Operation 84 'load' 'bias_buffer3_V_2_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 85 [1/2] (1.35ns)   --->   "%bias_buffer3_V_3_load_1 = load i7 %bias_buffer3_V_3_addr_1"   --->   Operation 85 'load' 'bias_buffer3_V_3_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 86 [1/2] (1.35ns)   --->   "%bias_buffer3_V_4_load_1 = load i7 %bias_buffer3_V_4_addr_1"   --->   Operation 86 'load' 'bias_buffer3_V_4_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 87 [1/2] (1.35ns)   --->   "%bias_buffer3_V_5_load_1 = load i7 %bias_buffer3_V_5_addr_1"   --->   Operation 87 'load' 'bias_buffer3_V_5_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 88 [1/2] (1.35ns)   --->   "%bias_buffer3_V_6_load_1 = load i7 %bias_buffer3_V_6_addr_1"   --->   Operation 88 'load' 'bias_buffer3_V_6_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+ST_9 : Operation 89 [1/2] (1.35ns)   --->   "%bias_buffer3_V_7_load_1 = load i7 %bias_buffer3_V_7_addr_1"   --->   Operation 89 'load' 'bias_buffer3_V_7_load_1' <Predicate = (!icmp_ln35)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 128> <RAM>
+
+State 10 <SV = 9> <Delay = 1.93>
+ST_10 : Operation 90 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_35_1_VITIS_LOOP_36_2_str"   --->   Operation 90 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_10 : Operation 91 [1/1] (0.00ns)   --->   "%specpipeline_ln38 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_18" [./dma.h:38->deform.cpp:94]   --->   Operation 91 'specpipeline' 'specpipeline_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_10 : Operation 92 [1/1] (0.00ns)   --->   "%specloopname_ln38 = specloopname void @_ssdm_op_SpecLoopName, void @empty_44" [./dma.h:38->deform.cpp:94]   --->   Operation 92 'specloopname' 'specloopname_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_10 : Operation 93 [1/1] (0.83ns)   --->   "%tmp = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_0_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 93 'mux' 'tmp' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 94 [1/1] (0.83ns)   --->   "%tmp_s = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_1_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 94 'mux' 'tmp_s' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 95 [1/1] (0.83ns)   --->   "%tmp_110 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_2_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 95 'mux' 'tmp_110' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 96 [1/1] (0.83ns)   --->   "%tmp_111 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_3_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 96 'mux' 'tmp_111' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 97 [1/1] (0.83ns)   --->   "%tmp_112 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_4_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 97 'mux' 'tmp_112' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 98 [1/1] (0.83ns)   --->   "%tmp_113 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_5_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 98 'mux' 'tmp_113' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 99 [1/1] (0.83ns)   --->   "%tmp_114 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_6_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 99 'mux' 'tmp_114' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 100 [1/1] (0.83ns)   --->   "%tmp_115 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_7_load, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 100 'mux' 'tmp_115' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 101 [1/1] (0.83ns)   --->   "%tmp_116 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_0_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 101 'mux' 'tmp_116' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 102 [1/1] (0.83ns)   --->   "%tmp_117 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_1_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 102 'mux' 'tmp_117' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 103 [1/1] (0.83ns)   --->   "%tmp_118 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_2_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 103 'mux' 'tmp_118' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 104 [1/1] (0.83ns)   --->   "%tmp_119 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_3_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 104 'mux' 'tmp_119' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 105 [1/1] (0.83ns)   --->   "%tmp_120 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_4_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 105 'mux' 'tmp_120' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 106 [1/1] (0.83ns)   --->   "%tmp_121 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_5_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 106 'mux' 'tmp_121' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 107 [1/1] (0.83ns)   --->   "%tmp_122 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_6_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 107 'mux' 'tmp_122' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 108 [1/1] (0.83ns)   --->   "%tmp_123 = mux i16 @_ssdm_op_Mux.ap_auto.8i16.i64, i16 %bias_buffer3_V_7_load_1, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i16 0, i64 0"   --->   Operation 108 'mux' 'tmp_123' <Predicate = (!icmp_ln35)> <Delay = 0.83> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 109 [1/1] (0.00ns)   --->   "%p_Result_15_i_i = bitconcatenate i256 @_ssdm_op_BitConcatenate.i256.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16, i16 %tmp_123, i16 %tmp_122, i16 %tmp_121, i16 %tmp_120, i16 %tmp_119, i16 %tmp_118, i16 %tmp_117, i16 %tmp_116, i16 %tmp_115, i16 %tmp_114, i16 %tmp_113, i16 %tmp_112, i16 %tmp_111, i16 %tmp_110, i16 %tmp_s, i16 %tmp"   --->   Operation 109 'bitconcatenate' 'p_Result_15_i_i' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_10 : Operation 110 [1/1] (1.09ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i256P0A, i256 %s_bias_1, i256 %p_Result_15_i_i" [/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 110 'write' 'write_ln174' <Predicate = (!icmp_ln35)> <Delay = 1.09> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_10 : Operation 111 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 111 'br' 'br_ln0' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+
+State 11 <SV = 7> <Delay = 0.00>
+ST_11 : Operation 112 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 112 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3ns, clock uncertainty: 0.81ns.
+
+ <State 1>: 1.62ns
+The critical path consists of the following:
+	fifo read on port 'skip3' (./dma.h:32->deform.cpp:94) [17]  (1.1 ns)
+	'select' operation ('REP', ./dma.h:34->deform.cpp:94) [21]  (0.525 ns)
+
+ <State 2>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln32', ./dma.h:32->deform.cpp:94) [24]  (2.02 ns)
+
+ <State 3>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln32', ./dma.h:32->deform.cpp:94) [24]  (2.02 ns)
+
+ <State 4>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln32', ./dma.h:32->deform.cpp:94) [24]  (2.02 ns)
+
+ <State 5>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln32', ./dma.h:32->deform.cpp:94) [24]  (2.02 ns)
+
+ <State 6>: 2.02ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln32', ./dma.h:32->deform.cpp:94) [24]  (2.02 ns)
+
+ <State 7>: 1.3ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten', ./dma.h:35->deform.cpp:94) with incoming values : ('add_ln35', ./dma.h:35->deform.cpp:94) [27]  (0 ns)
+	'icmp' operation ('icmp_ln35', ./dma.h:35->deform.cpp:94) [30]  (1.3 ns)
+
+ <State 8>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('bias_buffer3_V_0_addr') [41]  (0 ns)
+	'load' operation ('bias_buffer3_V_0_load') on array 'bias_buffer3_V_0' [42]  (1.35 ns)
+
+ <State 9>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('bias_buffer3_V_0_load') on array 'bias_buffer3_V_0' [42]  (1.35 ns)
+
+ <State 10>: 1.93ns
+The critical path consists of the following:
+	'mux' operation ('tmp') [43]  (0.837 ns)
+	fifo write on port 's_bias_1' (/usr/vitis/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [92]  (1.1 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb_exit_i_proc'
+================================================================
+* Date:           Wed Feb 24 15:50:08 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        batch
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.00 ns|  1.095 ns|     0.81 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     27|    -|
+|Register         |        -|    -|      26|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      26|     29|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |ap_done            |   9|          2|    1|          2|
+    |ap_return          |   9|          2|   24|         48|
+    |ret_V_1_loc_blk_n  |   9|          2|    1|          2|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              |  27|          6|   26|         52|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+----+----+-----+-----------+
+    |      Name      | FF | LUT| Bits| Const Bits|
+    +----------------+----+----+-----+-----------+
+    |ap_CS_fsm       |   1|   0|    1|          0|
+    |ap_done_reg     |   1|   0|    1|          0|
+    |ap_return_preg  |  24|   0|   24|          0|
+    +----------------+----+----+-----+-----------+
+    |Total           |  26|   0|   26|          0|
+    +----------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |                                                                                                      Source Object                                                                                                      |    C Type    |
++---------------------+-----+-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|ap_clk               |   in|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_continue          |   in|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ap_return            |  out|   24|  ap_ctrl_hs|  Block__Z12conv1x1_packILi16ELi16ELi512ELi1024ELi512ELi8ELi24ELi4ELi16ELi16EEvRN3hls6streamI6ap_intIXmlT4_T_EELi0EEERNS1_IS2_IXmlT4_T0_EELi0EEEPS2_IXmlT6_T_EEPS2_IXT7_EEPS2_IXT8_EE7ap_uintILi16EESG_SG_ibb.exit.i_proc|  return value|
+|ret_V_1_loc_dout     |   in|   32|     ap_fifo|                                                                                                                                                                                                              ret_V_1_loc|       pointer|
+|ret_V_1_loc_empty_n  |   in|    1|     ap_fifo|                                                                                                                                                                                                              ret_V_1_loc|       pointer|
+|ret_V_1_loc_read     |  out|    1|     ap_fifo|                                                                                                                                                                                                              ret_V_1_loc|       pointer|
++---------------------+-----+-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+

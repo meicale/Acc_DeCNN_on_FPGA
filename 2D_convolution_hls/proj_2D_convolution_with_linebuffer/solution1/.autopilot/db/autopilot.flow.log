@@ -1,0 +1,201 @@
+INFO-FLOW: Workspace /home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/proj_2D_convolution_with_linebuffer/solution1 opened at Thu Feb 18 10:50:31 CST 2021
+Execute         send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -default_interface 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_rtl -register_reset_num 
+Execute       set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/usr/vitis/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/usr/vitis/Vivado/2020.2/data:/usr/vitis/Vitis_HLS/2020.2/data
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data single -quiet 
+DBG:HLSDevice: Trying to load device library: /usr/vitis/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /usr/vitis/Vivado/2020.2/data/parts/arch.xml
+Command         ap_part_info done; 1.09 sec.
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute         add_library xilinx/virtexuplus/virtexuplus:xcvu9p:-flga2104:-2-i 
+Execute           get_default_platform 
+Execute           open_platform DefaultPlatform 
+Execute           ap_part_info -data single -name xcvu9p-flga2104-2-i 
+Execute           ap_part_info -name xcvu9p-flga2104-2-i -data resources 
+Execute           config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute           ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute           config_chip_info -speed medium 
+Execute           ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute           config_library_info -library virtexuplus_medium 
+Execute           config_library_info -family virtexuplus 
+Execute           config_library_info -part xcvu9p:-flga2104:-2-i 
+Execute           import_lib /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/virtexuplus_dsp48e2.hlp 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command         add_library done; 0.13 sec.
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2-i'
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute         config_compile -quiet -complex-mul-dsp=0 
+Command       set_part done; 1.25 sec.
+Execute       create_clock -period 6.66 
+INFO: [HLS 200-1510] Running: create_clock -period 6.66 
+Execute         ap_set_clock -name default -period 6.66 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.66ns.
+Execute       source x_hls.tcl 
+INFO: [HLS 200-1511] Skipping solution action command: csim_design
+INFO: [HLS 200-1511] Skipping solution action command: csynth_design
+Command     ap_source done; error code: 1; 1.26 sec.
+Execute     get_project 
+Command   open_tcl_project done; 1.26 sec.
+Execute   get_project -directory 
+Command ap_source done; 1.26 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/bill/workspace/vitis_hls_examples/HLS-Tiny-Tutorials/algorithm_2D_convolution_linebuffer/proj_2D_convolution_with_linebuffer/solution1 opened at Thu Feb 18 10:57:36 CST 2021
+Execute     ap_set_clock -name default -period 6.66 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.66ns.
+Execute     import_lib /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     set_part xcvu9p-flga2104-2-i 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/usr/vitis/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/usr/vitis/Vivado/2020.2/data:/usr/vitis/Vitis_HLS/2020.2/data
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data single -quiet 
+DBG:HLSDevice: Trying to load device library: /usr/vitis/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /usr/vitis/Vivado/2020.2/data/parts/arch.xml
+Command       ap_part_info done; 1.37 sec.
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       add_library xilinx/virtexuplus/virtexuplus:xcvu9p:-flga2104:-2-i 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         ap_part_info -data single -name xcvu9p-flga2104-2-i 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data resources 
+Execute         config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute         config_chip_info -speed medium 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute         config_library_info -library virtexuplus_medium 
+Execute         config_library_info -family virtexuplus 
+Execute         config_library_info -part xcvu9p:-flga2104:-2-i 
+Execute         import_lib /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/virtexuplus_dsp48e2.hlp 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       add_library done; 0.15 sec.
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2-i'
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.57 sec.
+Execute     ap_part_info -data single -name xcvu9p-flga2104-2-i 
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data resources 
+Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute     config_chip_info -speed medium 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -m_axi_offset 
+Execute     get_config_rtl -register_reset_num 
+Command   open_solution done; 1.7 sec.
+Execute   set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/usr/vitis/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/usr/vitis/Vivado/2020.2/data:/usr/vitis/Vitis_HLS/2020.2/data
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data single -quiet 
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute     add_library xilinx/virtexuplus/virtexuplus:xcvu9p:-flga2104:-2-i 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       ap_part_info -data single -name xcvu9p-flga2104-2-i 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data resources 
+Execute       config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       config_chip_info -speed medium 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       config_library_info -library virtexuplus_medium 
+Execute       config_library_info -family virtexuplus 
+Execute       config_library_info -part xcvu9p:-flga2104:-2-i 
+Execute       import_lib /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/virtexuplus_dsp48e2.hlp 
+Execute       source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /usr/vitis/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     add_library done; 0.12 sec.
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.16 sec.
+Execute   create_clock -period 6.66 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 6.66 -name default 
+Execute   csim_design -profile -quiet 
+INFO: [HLS 200-1510] Running: csim_design -profile -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.67 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.67 seconds. CPU system time: 0.19 seconds. Elapsed time: 1.67 seconds; current allocated memory: 191.554 MB.
+Command ap_source done; 3.54 sec.
+Execute cleanup_all 
