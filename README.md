@@ -22,7 +22,7 @@ Accelerate  CNN and deformable CNN on FPGA
 
    对于输出特征图y上的每个位置p0，我们有
 
-![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/cnn_form1.png)
+![img](images/cnn_form1.png)
 
 
    R定义了感受野的大小和dilation。例如：   R = {(−1, −1),(−1, 0), . . . ,(0, 1),(1, 1)} 定义了3×3的内核，dilation为1
@@ -102,7 +102,7 @@ Accelerate  CNN and deformable CNN on FPGA
 
    Deformable Convolution在标准卷积中向常规采样网格添加了2D偏移。 deformable RoI pooling在以前的RoI pooling中的常规bin partition中为每个bin添加了一个offset。类似地，从先前的特征图和RoI学习偏移，使得能够对具有不同形状的对象进行自适应部分定位。
 
-   ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/de_cnn_offset.jpg)
+   ![img](images/de_cnn_offset.jpg)
 
    展示了卷积核大小为 3x3 的正常卷积和可变形卷积的采样方式：(a) 所示的正常卷积规律的采样 9 个点（绿点），(b)(c)(d) 为可变形卷积，在正常的采样坐标上加上一个位移量（蓝色箭头），其中 (c)(d) 作为 (b) 的特殊情况，展示了可变形卷积可以作为尺度变换，比例变换和旋转变换的特殊情况
 
@@ -112,19 +112,19 @@ Accelerate  CNN and deformable CNN on FPGA
 
    Deformable Conv操作并没有改变卷积的计算操作，而是在卷积操作的作用区域上，加入了一个可学习的参数∆pn。对于变形的卷积，增加了一个参数，即偏移量 {∆pn|n = 1, ..., N}, where N = |R|. 
 
-  Deformable Conv公式:   ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/decnn_form1.webp)
+  Deformable Conv公式:   ![img](images/decnn_form1.webp)
 
 
 
-   ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/de_cnn.png)
+   ![img](images/de_cnn.png)
 
 3X3的变形卷积 ，*首先通过一个小卷积层（绿色）的输出得到可变形卷积所需要的位移量，然后将其作用在卷积核（蓝色）上，达到可变形卷积的效果*
 
 #### 2.2 Deformable ROI Pooling算子原理与公式
 
-   类似的定义变形的ROI pooling，增加一个偏移量∆pij,如下定义:  ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/deroi_fom1.webp)
+   类似的定义变形的ROI pooling，增加一个偏移量∆pij,如下定义:  ![img](images/deroi_fom1.webp)
 
-   ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/deroi.png)
+   ![img](images/deroi.png)
 
   3X3的deformable ROI pooling
 
@@ -147,7 +147,7 @@ Accelerate  CNN and deformable CNN on FPGA
 
    （4）使用depth-wise卷积来减少乘法累加运算（MAC）的总数。
 
-   ![img](/home/bill/workspace/Acc_DeCNN_on_FPGA/images/de_cnn_off_m.png)
+   ![img](images/de_cnn_off_m.png)
 
 用于可变形卷积运算协同设计的算法调整（a）默认的3×3卷积滤波器 （b）具有不受约束的非整数偏移量的原始可变形卷积。（c）设置偏移量的上限 （d）将几何形状限制为正方形（e）预测的偏移量舍入为整数
 
